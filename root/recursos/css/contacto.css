@@ -1,0 +1,120 @@
+h1 {
+    color: white;
+}
+
+.principal {
+    background-size: cover; 
+    position: relative;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    padding: 5%;
+}
+
+.principal--suma-tu-bodega {
+    background-image: url(../imagenes/fondo-suma-tu-viñedo.webp);
+}
+
+.principal--contacto {
+    background-image: url(../imagenes/contacto.webp); 
+}
+
+.overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.883);
+}
+
+.cuerpo .pie {
+    margin-top: 0;
+}
+
+.seccion-informacion {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 70rem;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    width: 100%;
+    max-width: 70rem;
+    gap: 2rem;
+    border-radius: 2rem;
+    padding: 3rem;
+    margin: 0;
+}
+
+.formulario__errores {
+    text-align: center;   
+    display: none; 
+}
+
+.formulario__label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+    color: white;
+    font-weight: bold;
+}
+
+.formulario__campo {
+    border-radius: 1.25rem;
+    height: 4rem;
+    border: none;
+    padding: 1rem
+}
+
+.formulario__campo--textarea {
+    height: 15rem;
+    resize: none;
+}
+
+.formulario__boton {
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    border: none;   
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    background-color: #006bb3;
+}
+
+.formulario__boton:hover {
+    background-color: #0099ff;
+    cursor: pointer;
+}
+
+.formulario__parrafo {
+    color: white;
+}
+
+@media(min-width: 768px) {
+
+    /* .principal {
+        flex-direction: row;
+        gap: 8rem;
+    } */
+
+    .formulario__campo {
+        height: 4.5rem;
+    }
+
+    .formulario__campo--textarea {
+        height: 15rem;
+        resize: none;
+    }
+}

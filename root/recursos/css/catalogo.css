@@ -1,0 +1,138 @@
+.principal {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    padding: 0 10%;
+}
+
+.hr {
+    height: 0.1rem;
+    width: 100%;
+    background-color: #d9d9cc;
+}
+
+.contenedor-boton {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding-top: 5rem;
+}
+
+.boton-precios-mayoristas {
+    width: 15rem;
+    background: #006bb3;
+    color: white;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.seccion-titulo {
+    display: flex;
+    flex-direction: column;
+}
+
+.seccion-titulo__titulo {
+    text-shadow: var(--titulo-sombra);
+    color: var(--bordo);
+    margin-top: 10rem;
+}
+
+.seccion-filtros {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin-top: -3rem;
+    margin-bottom: -3rem;
+}
+
+.seccion-filtros__label {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.seccion-filtros__select {
+    border-radius: 3rem;
+    border: 1px solid #d9d9cc;
+    font-family: "Open Sans";
+    padding: 1rem;
+    background-color: white;
+}
+
+.seccion-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+    justify-content: center;
+    gap: 5rem;
+}
+
+.tarjeta-producto {
+    overflow: hidden;
+    background-color: white;
+    border-radius: 2rem;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.45);
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.45);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.45);
+}
+
+.tarjeta-producto__informacion {
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    gap: 2rem;
+}
+
+.tarjeta-producto__titulo {
+    font-size: 3rem;
+    color: var(--bordo);
+    text-shadow: var(--titulo-sombra);
+    text-align: left;
+}
+
+.tarjeta-producto__imagen {
+    width: 100%;
+}
+
+.tarjeta-producto__contenedor-parrafo {
+    background-color: white;
+}
+
+.tarjeta-producto__parrafo {
+    font-size: 2rem;
+    text-align: left;
+}
+
+.tarjeta-producto__parrafo {
+    color: black;
+}
+
+.tarjeta-producto__contenedor-precio {
+    height: 7rem;
+    background-color: var(--bordo-oscuro);
+    border-radius: 0 0 2rem 2rem;
+}
+
+.tarjeta-producto__precio {
+    color: black;
+    font-size: 3rem;
+}
+
+
+@media (min-width: 768px) {
+    .seccion-filtros__label {
+        width: 30rem;
+    }
+
+    .boton-precios-mayoristas {
+        width: auto;
+    }
+}
+
+@media (max-width: 500px) {
+    .seccion-filtros {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,159 @@
+[
+    {
+        "id": 1,
+        "nombre": "Botella Merlot - Di Candi",
+        "tipo": "tinto",
+        "precio": 5500,
+        "presentacion": 1,
+        "descripcion": "Suave, aterciopelado y equilibrado, con notas frutales. Perfecto para acompañar con pastas rellenas, quesos semiduros y tablas gourmet.",
+        "imagen": {
+            "src": "./recursos/imagenes/catalogo/AA MERLOT DI CANDI.webp",
+            "alt": "Botella de vino tinto Merlot de Di Candi"
+        }
+    },
+    {
+        "id": 2,
+        "nombre": "Botella Tannat - Di Candi",
+        "tipo": "tinto",
+        "precio": 5500,
+        "presentacion": 1,
+        "descripcion": "Taninos firmes y carácter profundo con final persistente. Perfecto para acompañar con carnes asadas, embutidos premium y sabores ahumados.",
+        "imagen": {
+            "src": "./recursos/imagenes/catalogo/AA TANNAT DI CANDI.webp",
+            "alt": "Botella de vino tinto Tannat de Di Candi"
+        }
+    },
+    {
+        "id": 3,
+        "nombre": "Botella Torrontés - Di Candi",
+        "tipo": "blanco",
+        "precio": 5500,
+        "presentacion": 1,
+        "descripcion": "Aromas florales intensos con boca fresca y elegante. Perfecto para acompañar con quesos suaves, frutos secos y tapeos ligeros.",
+        "imagen": {
+            "src": "./recursos/imagenes/catalogo/AA TORRONTES DI CANDI.webp",
+            "alt": "Botella de vino blanco Torrontés de Di Candi"
+        }
+    },
+    {
+        "id": 4,
+        "nombre": "Botella Blend - Piedra Mora",
+        "tipo": "tinto",
+        "precio": 5500,
+        "presentacion": 1,
+        "descripcion": "Complejo, equilibrado y expresivo; relleno de capas aromáticas. Perfecto para acompañar con carnes braseadas, pastas con salsas especiadas y quesos maduros.",
+        "imagen": {
+            "src": "./recursos/imagenes/catalogo/BB BLEND PIEDRA MORA.webp",
+            "alt": "Botella de vino tinto Blend de Piedra Mora"
+        }
+    },
+    {
+        "id": 5,
+        "nombre": "Botella Bonarda - Piedra Mora",
+        "tipo": "tinto",
+        "precio": 5500,
+        "presentacion": 1,
+        "descripcion": "Jugoso, vibrante y de gran frescura natural. Perfecto para acompañar con pizzas artesanales, empanadas criollas y charcutería.",
+        "imagen": {
+            "src": "./recursos/imagenes/catalogo/BB BONARDA PIEDRA MORA.webp",
+            "alt": "Botella de vino tinto Bonarda de Piedra Mora"
+        }
+    },
+    {
+        "id": 6,
+        "nombre": "Botella Tannat - Piedra Mora",
+        "tipo": "tinto",
+        "precio": 5500,
+        "presentacion": 1,
+        "descripcion": "Potente, estructurado y con personalidad serrana marcada. Perfecto para acompañar con platos de cocción lenta fiambres curados y quesos intensos.",
+        "imagen": {
+            "src": "./recursos/imagenes/catalogo/BB TANNAT PIEDRA MORA.webp",
+            "alt": "Botella de vino tinto Tannat de Piedra Mora"
+        }
+    },
+    {
+        "id": 7,
+        "nombre": "Botella Barbera Nebbiolo - Santos Quiroga",
+        "tipo": "tinto",
+        "precio": 5500,
+        "presentacion": 1,
+        "descripcion": "Vibrante, fresco y con una acidez refinada que realza su elegancia. Perfecto para acompañar con antipastos, pastas livianas y quesos jóvenes.",
+        "imagen": {
+            "src": "./recursos/imagenes/catalogo/CC BARBERA NEBBIOLO SANTOS QUIROGA.webp",
+            "alt": "Botella de vino tinto Barbera de Nebbiolo de Santos Quiroga"
+        }
+    },
+    {
+        "id": 8,
+        "nombre": "Botella Malbec - Santos Quiroga",
+        "tipo": "tinto",
+        "precio": 5500,
+        "presentacion": 1,
+        "descripcion": "Suave, equilibrado y de perfil moderno con notas frutales. Perfecto para acompañar con parrilla, risottos y picadas premium.",
+        "imagen": {
+            "src": "./recursos/imagenes/catalogo/CC MALBEC SANTOS QUIROGA.webp",
+            "alt": "Botella de vino tinto Malbec de Santos Quiroga"
+        }
+    },
+    {
+        "id": 9,
+        "nombre": "Botella Trivarietal - Santos Quiroga",
+        "tipo": "tinto",
+        "precio": 5500,
+        "presentacion": 1,
+        "descripcion": "Armonioso, profundo y sofisticado, con gran presencia en boca. Perfecto para acompañar con carnes rojas, quesos estacionados y platos especiados.",
+        "imagen": {
+            "src": "./recursos/imagenes/catalogo/CC TRI-VARIETAL SANTOS QUIROGA.webp",
+            "alt": "Botella Trivarietal de Santos Quiroga"
+        }
+    },
+    {
+        "id": 10,
+        "nombre": "Botella Malbec Roble - Sierra y Monte",
+        "tipo": "tinto",
+        "precio": 5500,
+        "presentacion": 1,
+        "descripcion": "Redondo, especiado y elegante, con sutil paso por roble. Perfecto para acompañar carnes grilladas, provoleta y pastas intensas.",
+        "imagen": {
+            "src": "./recursos/imagenes/catalogo/DD MALBEC ROBLE SIERRA Y MONTE.webp",
+            "alt": "Botella Malbec Roble de Sierra y Monte"
+        }
+    },
+    {
+        "id": 11,
+        "nombre": "Botella Vermouth Sierra y Monte",
+        "tipo": "tinto",
+        "precio": 5500,
+        "presentacion": 1,
+        "descripcion": "Herbal, aromático y refrescante; sello distintivo de la serranía. Perfecto para acompañar con aceitunas, quesos suaves y charcutería fina.",
+        "imagen": {
+            "src": "./recursos/imagenes/catalogo/DD VERMOUTH SIERRE Y MONTE.webp",
+            "alt": "Botella Vermouth de Sierra y Monte"
+        }
+    },
+    {
+        "id": 12,
+        "nombre": "Pack de 2 vinos elegidos por Mini Wine",
+        "tipo": "",
+        "precio": 13000,
+        "presentacion": 2,
+        "descripcion": "Una elección curada para descubrir nuevos perfiles sin saber de antemano qué varietales llegarán. Ideal para una degustación rápida o para sumar un toque inesperado a cualquier momento.",
+        "imagen": {
+            "src": "./recursos/imagenes/catalogo/PACK DE 2 BLANCO.webp",
+            "alt": "Pack de 4 botellas de vino"
+        }
+    },
+    {
+        "id": 13,
+        "nombre": "Pack de 4 vinos elegidos por Mini Wine",
+        "tipo": "",
+        "precio": 24000,
+        "presentacion": 4,
+        "descripcion": "Una selección pensada para recorrer distintos estilos en una sola experiencia, combinando varietales y perfiles que invitan a explorar. Perfecto para degustar con calma o compartir descubrimientos.",
+        "imagen": {
+            "src": "./recursos/imagenes/catalogo/PACK DE 4 BLANCO.webp",
+            "alt": "Pack de 4 botellas de vino"
+        }
+    }
+
+]

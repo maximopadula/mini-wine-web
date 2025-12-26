@@ -1,0 +1,76 @@
+h3 {
+    margin-top: 0;
+}
+
+.seccion-miniwine {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0rem 10%;
+    gap: 2rem;
+}
+
+.seccion-miniwine__titulo, .seccion-productos__titulo {
+    color: var(--bordo);
+    text-shadow: var(--titulo-sombra);
+}
+
+.seccion-productos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    padding: 0rem 10%;
+}
+
+.contenedor {
+    display: grid;
+    gap: 4rem;
+}
+
+.articulo-producto {
+    display: grid;
+}
+
+.articulo-producto__imagen {
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+    width: 100%;
+}
+
+.articulo-producto__informacion {
+    padding: 4rem;
+    color: white;
+    border-radius: 0 0 15px 15px;
+}
+
+.articulo-producto__informacion--packs {
+    background-color: var(--bordo-oscuro);
+}
+
+.articulo-producto__informacion--individual {
+    background-color: var(--marron);
+}
+
+@media (min-width: 1024px) {
+
+    .contenedor {
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .articulo-producto {
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: auto;
+        overflow: hidden;
+    }
+
+    .articulo-producto__imagen {
+        border-radius: 15px 0 0 15px;
+    }
+
+    .articulo-producto__informacion {
+        border-radius: 0 15px 15px 0;
+    }
+}

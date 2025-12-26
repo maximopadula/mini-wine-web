@@ -1,0 +1,294 @@
+@font-face {
+    font-family: "Open Sans";
+    src: url(/root/recursos/fuentes/OpenSans/OpenSans-VariableFont_wdth\,wght.ttf);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Noto Serif";
+    src: url(/root/recursos/fuentes/NotoSerif/NotoSerif-VariableFont_wdth\,wght.ttf);
+    font-weight: 700;
+}
+
+:root {
+    font-family: "Open Sans", sans-serif;
+    
+    --parrafo: 2rem;
+    --titulo: 4.5rem;
+    --subtitulo: 3.5rem;
+    --link: 2.3rem;
+    --titulo-sombra: 0 0 0.07em rgba(0,0,0, 38%);
+    --input: 1.6rem;
+    
+    --ajusteViewport: calc(100dvh - 11rem);
+
+    --bordo: #cb0101;
+    --bordo-oscuro: #3d0000;
+    --marron: #2e1d15;
+    --naranja: #491600;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; /* Transforma 1 rem a 10px. Previamente era 1 rem a 16px*/
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Noto Serif";
+
+}
+
+h1, h2 {
+    font-size: var(--titulo);
+    text-align: center;
+}
+
+h3, h4 {
+    font-size: var(--subtitulo);
+}
+
+p {
+    font-size: var(--parrafo);
+    text-align: justify;
+}
+
+input, textarea, select, label {
+    font-size: var(--input);
+}
+
+button {
+    font-size: var(--parrafo);
+}
+
+body, h1, h2, p{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffffef;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    height: 100%;
+    font-size: var(--link);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+}
+
+button {
+    font-family: "Open Sans", sans-serif;
+}
+
+header > a {
+    display: flex;
+    align-items: center;
+    padding: 2.5rem;
+}
+
+.cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 11rem;
+
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+
+    box-shadow: 1px -1px 10px 10px rgba(0,0,0,0.16);
+    -webkit-box-shadow: 1px -1px 10px 10px rgba(0,0,0,0.16);
+    -moz-box-shadow: 1px -1px 10px 10px rgba(0,0,0,0.16);
+
+    z-index: 10;
+}
+
+.cabecera__logotipo {
+    height: 100%;
+    width: auto;
+}
+
+.navegacion {
+    display: none;
+}
+
+.navegacion__boton {
+    all: unset;
+    display: block;  
+    cursor: pointer;
+    margin-right: 4rem;
+    z-index: 999;
+}
+
+.navegacion__icono {
+    width: 4rem;
+}
+
+ .navegacion__lista {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5rem;
+    margin-top: 12rem;
+}
+
+.overlay-menu {
+    display: none;
+}
+
+.overlay-menu--abierto {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.436);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(100vw);
+    height: 100vh;
+    z-index: 900;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.navegacion__item {
+    list-style-type: none;
+}
+
+.navegacion--abierta {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 30rem;
+    display: flex; 
+    flex-direction: column;
+    background-color: white;
+    z-index: 950;
+}
+
+.navegacion__item:hover a {
+    border-bottom: 2px solid var(--bordo);
+    color: var(--bordo);
+}
+
+.pie {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+
+    background-color: #ffffff;
+    box-shadow: 1px -1px 10px 10px rgba(0,0,0,0.16);
+    -webkit-box-shadow: 1px -1px 10px 10px rgba(0,0,0,0.16);
+    -moz-box-shadow: 1px -1px 10px 10px rgba(0,0,0,0.16);
+
+    margin-top: 10rem;
+}
+
+.pie__informacion {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.pie__link {
+    display: flex;
+    align-items: center;
+}
+
+.pie__icono {
+    width: 4rem;
+}
+
+.seccion-introduccion {
+    height: var(--ajusteViewport); /* Alto del viewport - alto de la barra de navegación */
+    overflow: hidden; /* Para que la iamgen no se exceda del tamaño del contenedor (elemento padre) */
+
+
+    position: relative; /* Mantiene el elemento en su lugar dentro del flujo (es decir, no saca el elemento de su sitio natural). */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.seccion-introduccion__parrafo {
+    font-size: var(--subtitulo);
+    text-align: center;
+}
+
+.seccion-introduccion__parrafo {
+    position: absolute;   /* permite que quede encima de la imagen */
+    z-index: 2;
+    color: white;
+    padding: 2rem;
+}
+
+.imagen-fondo {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.imagen-fondo__overlay {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.78);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    :root {
+        --parrafo: 2.5rem; /* Output para 2rem min y 3.5rem max */
+        --input: 1.8rem;
+        --titulo: 5rem; /*  */
+        --subtitulo: 4rem;
+    }
+}
+
+/* Escritorio */
+@media (min-width: 1024px) {
+
+    :root {
+        --link: 2rem;
+    }
+
+    .navegacion__boton {
+        display: none;
+    } 
+
+    .pie__informacion {
+        flex-direction: row;
+        gap: 3.3rem;
+    }
+
+    .navegacion {
+        display: flex;
+        height: 100%;
+        padding-right: 5rem;
+    }
+
+    .navegacion__lista {
+        all: unset;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .overlay-menu {
+        display: none;
+    }
+}

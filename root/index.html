@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./recursos/css/general.css">
+    <link rel="stylesheet" href="./recursos/css/index.css">
+    <script src="./recursos/js/menu.js" defer></script>
+    <title>Mini Wine - Inicio</title>
+</head>
+<body>
+    <header class="cabecera">
+        <a href="./">
+            <img class="cabecera__logotipo" src="./recursos/imagenes/logotipo-miniwine.webp" alt="Logotipo de Mini Wine"  width="100px">
+        </a>
+
+        <nav class="navegacion" id="navegacion">
+            <ul class="navegacion__lista">
+                <li class="navegacion__item"><a href="./index.html">Inicio</a></li>
+                <li class="navegacion__item"><a href="./catalogo.html">Catálogo</a></li>
+                <li class="navegacion__item"><a href="./acerca-de-miniwine.html">Acerca de Mini Wine</a></li>
+                <li class="navegacion__item"><a href="./suma-tu-bodega.html">Sumá tu bodega</a></li>
+                <li class="navegacion__item"><a href="./contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <button class="navegacion__boton" id="navegacion__boton">
+            <img class="navegacion__icono" id="navegacion__icono" src="./recursos/imagenes/icono menú.svg" alt="Ícono del menú">   
+        </button>
+        
+        <div class="overlay-menu" id="overlay-menu">
+        </div>
+    </header>
+
+    <main>
+        <section class="seccion-introduccion">
+
+            <img class="imagen-fondo" src="./recursos/imagenes/hero-inicio.webp" alt="Copa de vino">
+
+            <p class="seccion-introduccion__parrafo">Vinos cordobeses en pequeño formato. Grandes historias en cada copa.</p>
+            <div class="imagen-fondo__overlay"></div>
+        </section>
+    
+        <section class="seccion-miniwine">
+            <h1 class="seccion-miniwine__titulo">Mini Wine</h1>
+            <p class="seccion-miniwine__parrafo">En Mini Wine seleccionamos vinos cordobeses de bodegas boutique y los presentamos en un formato de degustación que redefine la experiencia de beber vino. Nuestro propósito es acercar la vitivinicultura local a más personas, conectando el trabajo de cada bodega con quienes valoran la calidad, la historia y la autenticidad detrás de cada botella. Trabajamos de manera directa con productores de Córdoba para ofrecer varietales cuidados, expresivos y únicos, en un tamaño pensado para disfrutar, descubrir y compartir. Mini Wine es más que un producto: es cultura, identidad y experiencia en 187 ml.</p>
+        </section>
+
+        <section class="seccion-productos">
+
+            <h2 class="seccion-productos__titulo">Nuestros productos</h2>
+ 
+            <div class="contenedor">
+                
+                <article class="articulo-producto">
+
+                    <img class="articulo-producto__imagen" src="./recursos/imagenes/Individual.webp" alt="Una botella de vino y una copa en la mesa">
+
+                    <div class="articulo-producto__informacion articulo-producto__informacion--individual">
+                        <h3>Individual</h3>
+                        <p>
+                            Cada botella individual de Mini Wine representa la identidad de una bodega cordobesa. Son vinos seleccionados uno por uno, en 187 ml, para que puedas probar, elegir y encontrar tus favoritos sin necesidad de abrir una botella entera. Varietales clásicos, expresiones artesanales y blends únicos, todos con su propio carácter y la dedicación de cada productor local.                            
+                        </p>
+                    </div>
+                </article>
+
+                <article class="articulo-producto">
+
+                    <img class="articulo-producto__imagen" src="./recursos/imagenes/packs.webp" alt="Pack de vinos">
+
+                    <div class="articulo-producto__informacion articulo-producto__informacion--packs">
+                        <h3>Packs</h3>
+                        <p>
+                            Una curaduría de vinos cordobeses en formato degustación, ideales para regalar, explorar nuevos varietales o disfrutar momentos especiales.
+                            Disponible en pack de 4 unidades para una experiencia completa y en pack de 2 unidades, perfecto para una degustación rápida. Una selección pensada para sorprender.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pie">
+
+        <address class="pie__informacion">
+            <a class="pie__link" href="https://www.instagram.com/miniwine_/" target="_blank" rel="noopener noreferrer">
+                <img class="pie__icono" src="./recursos/imagenes/icono instagram.svg" alt="Ícono de Instagram">
+                @miniwine_
+            </a>
+
+            <a class="pie__link" href="https://wa.me/+5493518519953" target="_blank" rel="noopener noreferrer">
+                <img class="pie__icono" src="./recursos/imagenes/icono whatsapp.svg" alt="Ícono de Whatsapp">
+                Whatsapp
+            </a>
+        </address>
+    </footer>
+</body>
+</html>

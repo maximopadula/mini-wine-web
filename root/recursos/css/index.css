@@ -1,7 +1,3 @@
-h3 {
-    margin-top: 0;
-}
-
 .seccion-miniwine {
     display: flex;
     flex-direction: column;
@@ -44,6 +40,10 @@ h3 {
     padding: 4rem;
     color: white;
     border-radius: 0 0 15px 15px;
+}
+
+.producto-informacion__titulo {
+    margin-top: 0;
 }
 
 .producto-informacion--packs {

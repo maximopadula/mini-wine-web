@@ -55,15 +55,8 @@
 }
 
 .seccion-delivery {
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto; /* Centrado horizontal */
+    padding: 0 10%;
     /* Mantenemos tu ajuste manual si lo necesitas por el gap del main */
-    margin-top: -2.5rem; 
-    
-    display: flex;
-    flex-direction: column;
-    gap: 3rem; /* Un poco más de aire entre elementos */
 }
 
 /* TÍTULOS */
@@ -155,10 +148,6 @@ iframe {
 
     .producto-informacion {
         border-radius: 0 15px 15px 0;
-    }
-
-    .seccion-delivery {
-        padding: 4rem 2rem;
     }
 
     .seccion-delivery__contenedor {

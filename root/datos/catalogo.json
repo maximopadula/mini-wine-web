@@ -1,19 +1,21 @@
 [
     {
         "id": 1,
-        "nombre": "Botella Merlot - Di Candi",
+        "nombre": "Botella Merlot",
+        "bodega":"Di-Candi",
         "tipo": "tinto",
         "precio": 5500,
         "presentacion": 1,
         "descripcion": "Suave, aterciopelado y equilibrado, con notas frutales. Perfecto para acompañar con pastas rellenas, quesos semiduros y tablas gourmet.",
         "imagen": {
             "src": "./recursos/imagenes/catalogo/AA MERLOT DI CANDI.webp",
-            "alt": "Botella de vino tinto Merlot de Di Candi"
+            "alt": "Botella de vino tinto Merlot de Di Candi",
         }
     },
     {
         "id": 2,
-        "nombre": "Botella Tannat - Di Candi",
+        "nombre": "Botella Tannat",
+        "bodega":"Di-Candi",
         "tipo": "tinto",
         "precio": 5500,
         "presentacion": 1,
@@ -25,7 +27,8 @@
     },
     {
         "id": 3,
-        "nombre": "Botella Torrontés - Di Candi",
+        "nombre": "Botella Torrontés",
+        "bodega":"Di-Candi",
         "tipo": "blanco",
         "precio": 5500,
         "presentacion": 1,
@@ -37,7 +40,8 @@
     },
     {
         "id": 4,
-        "nombre": "Botella Blend - Piedra Mora",
+        "nombre": "Botella Blend",
+        "bodega":"Piedra Mora",
         "tipo": "tinto",
         "precio": 5500,
         "presentacion": 1,
@@ -49,7 +53,8 @@
     },
     {
         "id": 5,
-        "nombre": "Botella Bonarda - Piedra Mora",
+        "nombre": "Botella Bonarda",
+        "bodega":"Piedra Mora",
         "tipo": "tinto",
         "precio": 5500,
         "presentacion": 1,
@@ -61,7 +66,8 @@
     },
     {
         "id": 6,
-        "nombre": "Botella Tannat - Piedra Mora",
+        "nombre": "Botella Tannat",
+        "bodega":"Piedra Mora",
         "tipo": "tinto",
         "precio": 5500,
         "presentacion": 1,
@@ -73,7 +79,8 @@
     },
     {
         "id": 7,
-        "nombre": "Botella Barbera Nebbiolo - Santos Quiroga",
+        "nombre": "Botella Barbera Nebbiolo",
+        "bodega":"Santos Quiroga",
         "tipo": "tinto",
         "precio": 5500,
         "presentacion": 1,
@@ -85,7 +92,8 @@
     },
     {
         "id": 8,
-        "nombre": "Botella Malbec - Santos Quiroga",
+        "nombre": "Botella Malbec",
+        "bodega":"Santos Quiroga",
         "tipo": "tinto",
         "precio": 5500,
         "presentacion": 1,
@@ -97,7 +105,8 @@
     },
     {
         "id": 9,
-        "nombre": "Botella Trivarietal - Santos Quiroga",
+        "nombre": "Botella Trivarietal",
+        "bodega":"Santos Quiroga",
         "tipo": "tinto",
         "precio": 5500,
         "presentacion": 1,
@@ -109,7 +118,8 @@
     },
     {
         "id": 10,
-        "nombre": "Botella Malbec Roble - Sierra y Monte",
+        "nombre": "Botella Malbec Roble",
+        "bodega":"Sierra y Monte",
         "tipo": "tinto",
         "precio": 5500,
         "presentacion": 1,
@@ -121,7 +131,8 @@
     },
     {
         "id": 11,
-        "nombre": "Botella Vermouth Sierra y Monte",
+        "nombre": "Botella Vermouth",
+        "bodega":"Sierra y Monte",
         "tipo": "tinto",
         "precio": 5500,
         "presentacion": 1,
@@ -134,6 +145,7 @@
     {
         "id": 12,
         "nombre": "Pack de 2 vinos elegidos por Mini Wine",
+        "bodega":"",
         "tipo": "",
         "precio": 13000,
         "presentacion": 2,
@@ -146,6 +158,7 @@
     {
         "id": 13,
         "nombre": "Pack de 4 vinos elegidos por Mini Wine",
+        "bodega":"",
         "tipo": "",
         "precio": 24000,
         "presentacion": 4,

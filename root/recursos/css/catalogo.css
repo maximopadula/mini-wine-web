@@ -43,7 +43,7 @@
 .seccion-filtros {
     display: flex;
     flex-direction: row;
-    gap: 2rem;
+    gap: 4rem;
     margin-top: -3rem;
     margin-bottom: -3rem;
 }
@@ -92,6 +92,13 @@
     text-align: left;
 }
 
+.tarjeta-producto__bodega{
+    font-size: 2.5rem;
+    color: var(--bordo);
+    text-shadow: var(--titulo-sombra);
+    text-align: left;
+}
+
 .tarjeta-producto__imagen {
     width: 100%;
 }
@@ -131,7 +138,7 @@
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 850px) {
     .seccion-filtros {
         flex-direction: column;
     }

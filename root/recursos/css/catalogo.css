@@ -115,19 +115,31 @@
 .tarjeta-producto__parrafo {
     color: black;
 }
-
-.tarjeta-producto__contenedor-precio {
-    height: 7rem;
-    background-color: var(--bordo-oscuro);
-    border-radius: 0 0 2rem 2rem;
-}
-
 .tarjeta-producto__precio {
+    font-size: 3rem;   /* Tamaño */
+    font-weight: bold; /* Negrita (hace lo mismo que strong visualmente) */
     color: black;
-    font-size: 3rem;
+    margin: 0;         /* Para evitar espacios raros */
+}
+.tarjeta-producto__footer {
+    display: flex;
+    justify-content: space-between; /* Precio a la izq, Botón a la der */
+    align-items: center; /* Alineados verticalmente al centro */
+    margin-top: 1rem; /* Un poco de aire arriba */
 }
 
+/* El botón del carrito (IMPORTANTE: Darle tamaño) */
+.tarjeta-producto__boton-carrito {
+    width: 60px;  /* Ajusta este tamaño a tu gusto */
+    height: auto;
+    cursor: pointer; /* Manito al pasar el mouse */
+    transition: transform 0.2s ease; /* Animación suave */
+}
 
+/* Efecto al pasar el mouse por encima del carrito */
+.tarjeta-producto__boton-carrito:hover {
+    transform: scale(1.1); /* Se agranda un poquito */
+}
 @media (min-width: 768px) {
     .seccion-filtros__label {
         width: 30rem;

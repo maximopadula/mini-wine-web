@@ -92,6 +92,13 @@
     text-align: left;
 }
 
+.tarjeta-producto__bodega{
+    font-size: 2.5rem;
+    color: var(--bordo);
+    text-shadow: var(--titulo-sombra);
+    text-align: left;
+}
+
 .tarjeta-producto__imagen {
     width: 100%;
 }

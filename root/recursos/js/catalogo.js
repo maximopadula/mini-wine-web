@@ -11,7 +11,9 @@ $filtroPresentacion.addEventListener("change", () => {
     controlSelect();
     filtrarProductos();
 })
+
 $filtroTipoVino.addEventListener("change", filtrarProductos)
+$filtroBodega.addEventListener("change", filtrarProductos)
 
 function cargarFiltroBodegas(productos)
 {
@@ -40,6 +42,7 @@ function filtrarProductos() {
 
     const presentacionElegida = Number($filtroPresentacion.value)
     const tipoVinoElegido = $filtroTipoVino.value
+    const bodegaElegida = $filtroBodega.value
 
     let datosFiltrados = [...datos]
 
@@ -55,15 +58,23 @@ function filtrarProductos() {
         )
     }
 
+    if(bodegaElegida!=="todas"){
+        datosFiltrados= datosFiltrados.filter(producto=>producto.bodega== bodegaElegida)
+    }
+
     renderizarCatalogo(datosFiltrados, $contenedor)
 }
 
 function controlSelect() {
-    if($filtroPresentacion.value === "2" || $filtroPresentacion.value === "4") {
+    if($filtroPresentacion.value === "2" || $filtroPresentacion.value === "4"){
         $filtroTipoVino.value = "todos"
         $filtroTipoVino.disabled = true
+
+        $filtroBodega.value="todas"
+        $filtroBodega.disabled=true
     } else {
         $filtroTipoVino.disabled = false
+        $filtroBodega.disabled= false
     }
 }
 

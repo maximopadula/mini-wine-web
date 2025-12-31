@@ -140,6 +140,40 @@
 .tarjeta-producto__boton-carrito:hover {
     transform: scale(1.1); /* Se agranda un poquito */
 }
+
+/* Estilo del CONTENEDOR del botón (el círculo) */
+.tarjeta-producto__btn-agregar {
+    /* 1. Reseteamos los estilos feos por defecto de los buttons */
+    background-color: var(--bordo); /* Usamos tu color de marca */
+    border: none;
+    padding: 0; /* Quitamos relleno por defecto */
+
+    /* 2. Damos forma y tamaño */
+    width: 50px;  /* Un tamaño fácil de tocar con el dedo (mínimo recomendado 44-48px) */
+    height: 50px;
+    border-radius: 50%; /* Lo hace perfectamente redondo */
+
+    /* 3. Centramos el ícono adentro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* 4. Interacción y suavizado */
+    cursor: pointer;
+    transition: all 0.2s ease; /* Suaviza el hover y el click */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Una sombrita sutil para darle volumen */
+}
+.tarjeta-producto__icono-carrito {
+    width: 25px; /* El ícono debe ser más chico que el botón */
+    height: auto;
+    /* TRUCO: Esto invierte los colores. Si tu ícono es negro, lo vuelve blanco */
+    filter: invert(1) brightness(100%);
+}
+.tarjeta-producto__btn-agregar:active {
+    background-color: var(--bordo-oscuro);
+    transform: scale(0.95) translateY(0); /* Se achica un poquito como si lo hundieras */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2); /* La sombra se achica */
+}
 @media (min-width: 768px) {
     .seccion-filtros__label {
         width: 30rem;
@@ -147,6 +181,11 @@
 
     .boton-precios-mayoristas {
         width: auto;
+    }
+    .tarjeta-producto__btn-agregar:hover {
+    background-color: var(--bordo-oscuro); /* Se oscurece un poco al pasar el mouse */
+    transform: translateY(-2px); /* Se levanta un poquito */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* La sombra crece */
     }
 }
 

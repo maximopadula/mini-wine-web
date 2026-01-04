@@ -11,15 +11,15 @@ $formularioContacto.addEventListener("submit", (evento) => {
     const $motivoContacto = document.getElementById('id-motivo').value.trim();
     const $comentario = document.getElementById('id-comentario').value.trim();
 
-    const mensajeSumaTuViñedo = `Mensaje proveniente de *Contacto*:
+    const mensajeSumaTuViñedo = `Mensaje proveniente de *CONTACTO* del sitio de Mini Wine:
+
+    *•Motivo de contacto:* ${$motivoContacto}
 
     *•Nombre*: ${$nombre}
 
     *•Email*: ${$email}
 
     *•Teléfono*: ${$telefono}
-
-    *•Motivo de contacto: ${$motivoContacto}
 
     *•Comentario*: 
     ${$comentario}

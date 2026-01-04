@@ -19,7 +19,6 @@
                 <li class="navegacion__item"><a href="./index.html">Inicio</a></li>
                 <li class="navegacion__item"><a href="./catalogo.html">Catálogo</a></li>
                 <li class="navegacion__item"><a href="./acerca-de-miniwine.html">Acerca de Mini Wine</a></li>
-                <li class="navegacion__item"><a href="./suma-tu-bodega.html">Sumá tu bodega</a></li>
                 <li class="navegacion__item"><a href="./contacto.html">Contacto</a></li>
             </ul>
         </nav>
@@ -52,6 +51,15 @@
 
             <label class="formulario__label" for="id-telefono">Teléfono
                 <input class="formulario__campo" id="id-telefono" name="telefono" type="tel" placeholder="+54 9 11 1234-5678" required>
+            </label>
+
+            <label class="formulario__label" for="id-motivo">Motivo de contacto
+                <select class="formulario__campo" name="motivo" id="id-motivo" required>
+                    <option disabled selected>---</option>
+                    <option>Quiero obtener los precios mayoristas</option>
+                    <option>Quiero trabajar con Mini Wine</option>
+                    <option>Otra consulta</option>
+                </select>
             </label>
 
             <label class="formulario__label" for="id-comentario">Comentario

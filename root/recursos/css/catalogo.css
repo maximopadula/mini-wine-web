@@ -64,7 +64,8 @@
 
 .seccion-productos {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+    /* Cambia 30rem por 22rem (aprox 350px) para que entren más tarjetas lado a lado */
+    grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr)); 
     justify-content: center;
     gap: 5rem;
 }
@@ -101,6 +102,9 @@
 
 .tarjeta-producto__imagen {
     width: 100%;
+    height: 300px;       /* <--- AGREGA ESTO: Define la altura de la foto */
+    object-fit: cover;   /* <--- AGREGA ESTO: Evita que la foto se deforme */
+    object-position: center;
 }
 
 .tarjeta-producto__contenedor-parrafo {
@@ -123,9 +127,10 @@
 }
 .tarjeta-producto__footer {
     display: flex;
-    justify-content: space-between; /* Precio a la izquierda, Botón a la derecha */
-    align-items: center;            /* Alineados verticalmente al centro */
-    margin-top: 1rem;               /* Un poco de aire arriba */
+    flex-direction: column; /* <--- CAMBIO CLAVE: Pone el precio arriba y botón abajo */
+    gap: 15px;              /* Espacio entre precio y botón */
+    width: 100%;            /* Asegura que use todo el ancho */
+    margin-top: 1rem;
 }
 
 /* El botón del carrito (IMPORTANTE: Darle tamaño) */
@@ -147,19 +152,16 @@
 }
 
 .tarjeta-producto__btn-agregar {
-    /* 1. Layout Flex: pone el icono al lado del texto */
     display: flex;
     align-items: center;
-    justify-content: center; /* Centra el contenido */
-
-    /* 2. Forma Rectangular (La clave del arreglo) */
-    width: auto;          /* ¡IMPORTANTE! Quita el ancho fijo de 50px */
-    height: auto;         /* Quita el alto fijo */
-    padding: 8px 15px;    /* Espacio interno para que respire */
-    border-radius: 8px;   /* Bordes redondeados sutiles, no circulares */
+    justify-content: center;
     
-    /* 3. Estilos visuales */
-    background-color: var(--bordo); /* Tu color de marca */
+    width: 100%;          /* <--- CAMBIO CLAVE: Ocupa todo el ancho de la tarjeta */
+    
+    height: auto;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: var(--bordo);
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -174,7 +176,7 @@
 .tarjeta-producto__parrafo-carrito {
     margin: 0;
     margin-left: 8px;
-    font-size: 0.9rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color: #ffffff; /* BLANCO: para que resalte sobre el fondo bordo */
 }

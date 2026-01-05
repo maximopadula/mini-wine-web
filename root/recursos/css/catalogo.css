@@ -123,17 +123,22 @@
 }
 .tarjeta-producto__footer {
     display: flex;
-    justify-content: space-between; /* Precio a la izq, Botón a la der */
-    align-items: center; /* Alineados verticalmente al centro */
-    margin-top: 1rem; /* Un poco de aire arriba */
+    justify-content: space-between; /* Precio a la izquierda, Botón a la derecha */
+    align-items: center;            /* Alineados verticalmente al centro */
+    margin-top: 1rem;               /* Un poco de aire arriba */
 }
 
 /* El botón del carrito (IMPORTANTE: Darle tamaño) */
 .tarjeta-producto__boton-carrito {
-    width: 60px;  /* Ajusta este tamaño a tu gusto */
-    height: auto;
-    cursor: pointer; /* Manito al pasar el mouse */
-    transition: transform 0.2s ease; /* Animación suave */
+    display: flex;       /* ¡Clave! Hace que icono y texto se pongan lado a lado */
+    align-items: center; /* Centra el texto verticalmente respecto al icono */
+    
+    background-color: transparent; /* O el color de fondo que desees */
+    border: 1px solid #ccc;        /* Borde para darle forma rectangular */
+    border-radius: 5px;            /* Bordes ligeramente redondeados */
+    padding: 5px 10px;             /* Espacio interno del botón */
+    cursor: pointer;               /* Manito al pasar el mouse */
+    transition: all 0.3s ease;     /* Suavizar animaciones */
 }
 
 /* Efecto al pasar el mouse por encima del carrito */
@@ -141,39 +146,44 @@
     transform: scale(1.1); /* Se agranda un poquito */
 }
 
-/* Estilo del CONTENEDOR del botón (el círculo) */
 .tarjeta-producto__btn-agregar {
-    /* 1. Reseteamos los estilos feos por defecto de los buttons */
-    background-color: var(--bordo); /* Usamos tu color de marca */
-    border: none;
-    padding: 0; /* Quitamos relleno por defecto */
-
-    /* 2. Damos forma y tamaño */
-    width: 50px;  /* Un tamaño fácil de tocar con el dedo (mínimo recomendado 44-48px) */
-    height: 50px;
-    border-radius: 50%; /* Lo hace perfectamente redondo */
-
-    /* 3. Centramos el ícono adentro */
+    /* 1. Layout Flex: pone el icono al lado del texto */
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center; /* Centra el contenido */
 
-    /* 4. Interacción y suavizado */
+    /* 2. Forma Rectangular (La clave del arreglo) */
+    width: auto;          /* ¡IMPORTANTE! Quita el ancho fijo de 50px */
+    height: auto;         /* Quita el alto fijo */
+    padding: 8px 15px;    /* Espacio interno para que respire */
+    border-radius: 8px;   /* Bordes redondeados sutiles, no circulares */
+    
+    /* 3. Estilos visuales */
+    background-color: var(--bordo); /* Tu color de marca */
+    border: none;
     cursor: pointer;
-    transition: all 0.2s ease; /* Suaviza el hover y el click */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Una sombrita sutil para darle volumen */
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 .tarjeta-producto__icono-carrito {
-    width: 25px; /* El ícono debe ser más chico que el botón */
-    height: auto;
-    /* TRUCO: Esto invierte los colores. Si tu ícono es negro, lo vuelve blanco */
-    filter: invert(1) brightness(100%);
+    width: 20px;
+    height: 20px;
+    display: block;
+    filter: invert(1); /* Truco: Esto vuelve el icono blanco si era negro */
+}
+.tarjeta-producto__parrafo-carrito {
+    margin: 0;
+    margin-left: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #ffffff; /* BLANCO: para que resalte sobre el fondo bordo */
 }
 .tarjeta-producto__btn-agregar:active {
     background-color: var(--bordo-oscuro);
     transform: scale(0.95) translateY(0); /* Se achica un poquito como si lo hundieras */
     box-shadow: 0 1px 2px rgba(0,0,0,0.2); /* La sombra se achica */
 }
+
 @media (min-width: 768px) {
     .seccion-filtros__label {
         width: 30rem;

@@ -7,11 +7,6 @@
     gap: 80px;
 }
 
-.seccion-miniwine__titulo, .seccion-productos__titulo {
-    color: var(--bordo);
-    text-shadow: var(--titulo-sombra);
-}
-
 .contenedor {
     display: grid;
     gap: 2.4rem;
@@ -34,10 +29,6 @@
     border-radius: 0 0 15px 15px;
 }
 
-.producto-informacion__titulo {
-    margin-top: 0;
-}
-
 .producto-informacion--packs {
     background-color: var(--bordo-oscuro);
 }
@@ -50,24 +41,6 @@
     /* Mantenemos tu ajuste manual si lo necesitas por el gap del main */
     display: grid;
     gap: 2.4rem;
-}
-
-/* TÍTULOS */
-/* Usamos las variables globales para fuente y tamaño */
-.seccion-delivery__titulo {
-    font-family: "Noto Serif", serif; /* Aseguramos la fuente del diseño */
-    font-size: var(--titulo);         /* Usa los 4.5rem o 5rem definidos en :root */
-    color: var(--bordo);
-    text-shadow: var(--titulo-sombra);
-    text-align: center;
-}
-
-.seccion-delivery__subtitulo {
-    font-family: "Noto Serif", serif;
-    font-size: var(--subtitulo);
-    color: var(--bordo);
-    text-shadow: var(--titulo-sombra);
-    margin-bottom: 1.5rem;
 }
 
 /* LISTA DE BARRIOS */
@@ -108,12 +81,6 @@ iframe {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-/*El título: Grande y con color de marca */
-.seccion-sumar-bodega__titulo {
-    text-shadow:var(--titulo-sombra);
-    color: var(--bordo);        
 }
 
 .seccion-sumar-bodega__boton {

@@ -20,6 +20,7 @@
     --subtitulo: 3.2rem;
     --titulo: 4rem;
     --titulo-sombra: 0 0 0.07em rgba(0,0,0, 38%);
+    --sombra-header-footer: 1px 0px 10px 1px rgba(0, 0, 0, 0.13);
     
     --ajusteViewport: calc(100dvh - 8rem);
 
@@ -125,9 +126,9 @@ header > a {
     top: 0;
     background-color: #ffffff;
 
-    box-shadow: 1px -1px 10px 10px rgba(0,0,0,0.16);
-    -webkit-box-shadow: 1px -1px 10px 10px rgba(0,0,0,0.16);
-    -moz-box-shadow: 1px -1px 10px 10px rgba(0,0,0,0.16);
+    box-shadow: var(--sombra-header-footer);
+    -webkit-box-shadow: var(--sombra-header-footer);
+    -moz-box-shadow: var(--sombra-header-footer);
 
     z-index: 10;
 }
@@ -207,9 +208,9 @@ header > a {
     padding: 2rem;
 
     background-color: #ffffff;
-    box-shadow: 1px -1px 10px 10px rgba(0,0,0,0.16);
-    -webkit-box-shadow: 1px -1px 10px 10px rgba(0,0,0,0.16);
-    -moz-box-shadow: 1px -1px 10px 10px rgba(0,0,0,0.16);
+    box-shadow: var(--sombra-header-footer);
+    -webkit-box-shadow: var(--sombra-header-footer);
+    -moz-box-shadow: var(--sombra-header-footer);
 }
 
 .pie__informacion {

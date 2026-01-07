@@ -1,8 +1,3 @@
-.seccion-historia__titulo, .seccion-mvv__titulo {
-    color: var(--bordo);
-    text-shadow: var(--titulo-sombra);
-}
-
 .contenedor {
     display: grid;
     gap: 2.4rem;

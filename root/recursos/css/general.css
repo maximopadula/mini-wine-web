@@ -69,8 +69,22 @@ input, textarea, select, label, li {
     font-size: var(--parrafo);
 }
 
-button {
+.boton {
+    display: inline-block;
     font-size: var(--parrafo);
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    background-color: var(--bordo);
+    color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background-color: #920000;
 }
 
 a {

@@ -104,62 +104,23 @@ iframe {
     border: none;
 }
 
-
 .seccion-sumar-bodega {
-    text-align: center;        /* Centramos todo el contenido */         /* Flexbox ayuda a centrar el contenedor hijo */
-    justify-content: center;
-}
-
-.seccion-sumar-bodega__contenedor {
-    /* max-width: 700px; */
-    width: 100%;
-    
-  
-    margin: 0 auto;  
-
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
 }
 
 /*El título: Grande y con color de marca */
 .seccion-sumar-bodega__titulo {
-    text-align: center;
-    font-size: var(--titulo);
     text-shadow:var(--titulo-sombra);
-    color: var(--bordo);    
-    margin-bottom: 2rem;  
-    font-family: "Noto Serif", serif;      
+    color: var(--bordo);        
+}
+
+.seccion-sumar-bodega__boton {
+    margin-top: 4rem;
 }
 
 /*El texto descriptivo */
-.seccion-sumar-bodega__texto {
-    font-size: var(--parrafo);
-    line-height: 1.6;
-    margin-bottom: 20px;
-    text-align: justify;
-}
-
-
-.seccion-sumar-bodega__boton {
-    width: 100%;
-    padding: 1.5rem;
-    border-radius: 1rem;
-    margin-top: 1rem;
-    font-family: sans-serif;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: white;          /* Texto blanco para buen contraste */
-    border: 1px solid #722f37;
-    background-color: #722f37;
-}
-
-.seccion-sumar-bodega__boton:hover {
-     background-color: #5a232b; /* Un tono vino más oscuro al pasar el mouse */
-    border-color: #5a232b;
-    cursor: pointer;
-}
 
 @media (min-width: 768px) {
     .articulo-producto {
@@ -194,39 +155,6 @@ iframe {
         grid-template-rows: repeat(2, 1fr);
     }
 
- /*Damos más aire a la sección completa */
-    .seccion-sumar-bodega {
-        gap:10rem;
-        padding:0;
-    }
-
-    /*Controlamos el ancho para que no se estire infinito */
-
     /*Aumentamos el tamaño de la letra para aprovechar la pantalla */
-    .seccion-sumar-bodega__texto {
-        line-height: 1.8;  /* Más espaciado entre líneas */
-        margin-bottom: 30px;
-    }
 
-   .seccion-sumar-bodega__contenedor {
-        align-items: center;
-    }
-
-    .seccion-sumar-bodega__boton {
-        width: auto;
-        min-width: 350px;
-        
-        background-color: #722f37; /* Color Vino (Bordó) para combinar con el título */
-        color: #ffffff;            /* Texto blanco para buen contraste */
-        border: 1px solid #722f37; /* Borde del mismo color para definición */
-        /* CAMBIOS PARA QUE SE VEA GRANDE */
-        padding: 1.8rem 4rem; /* Más espacio interno, botón más alto y ancho */
-        font-size: 1.5rem;    /* Letra mucho más grande (aprox 24px) */
-        letter-spacing: 1px;  /* Un poquito de aire entre letras ayuda a leer en mayúsculas */
-    }
-    .seccion-sumar-bodega__boton:hover {
-    background-color: #5a232b; /* Un tono vino más oscuro al pasar el mouse */
-    border-color: #5a232b;
-    cursor: pointer;
-    }
 }

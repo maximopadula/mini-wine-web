@@ -33,8 +33,8 @@
 
 .seccion-filtros {
     display: flex;
-    flex-direction: row;
-    gap: 4rem;
+    flex-direction: column;
+    gap: 2rem;
     margin-top: -6rem;
     margin-bottom: -6rem;
 }
@@ -193,17 +193,11 @@
 }
 
 @media (min-width: 768px) {
-    .seccion-filtros__label {
-        width: 30rem;
-    }
 
-    .boton-precios-mayoristas {
-        width: auto;
-    }
 }
 
-@media (max-width: 850px) {
+@media (min-width: 630px) {
     .seccion-filtros {
-        flex-direction: column;
+        flex-direction: row;
     }
 }

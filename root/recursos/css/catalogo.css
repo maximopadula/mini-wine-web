@@ -27,12 +27,16 @@
     flex-direction: column;
 }
 
+.seccion-titulo__titulo {
+    margin: 0;
+}
+
 .seccion-filtros {
     display: flex;
     flex-direction: row;
     gap: 4rem;
-    margin-top: -3rem;
-    margin-bottom: -3rem;
+    margin-top: -6rem;
+    margin-bottom: -6rem;
 }
 
 .seccion-filtros__label {
@@ -60,9 +64,9 @@
     overflow: hidden;
     background-color: white;
     border-radius: 2rem;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.45);
-    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.45);
-    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.45);
+    box-shadow: var(--sombra-header-footer);
+    -webkit-box-shadow: var(--sombra-header-footer);
+    -moz-box-shadow: var(--sombra-header-footer);
 }
 
 .tarjeta-producto__titulo {

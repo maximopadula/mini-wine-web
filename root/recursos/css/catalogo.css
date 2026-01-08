@@ -97,7 +97,7 @@
     width: 100%;
 }
 
-.tarjeta-producto__btn-agregar {
+.boton--agregar-al-carrito {
     display: flex;
     align-items: center;
     justify-content: center;

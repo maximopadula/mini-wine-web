@@ -28,6 +28,7 @@
     --bordo-oscuro: #2e1515;
     --marron: #2e1f15;
     --naranja: rgb(73, 23, 0);
+    --rojo: #b80000;
 }
 
 * {
@@ -87,7 +88,7 @@ input, textarea, select, label, li {
     text-transform: uppercase;
     text-align: center;
     font-weight: bold;
-    background-color: var(--bordo);
+    background-color: var(--rojo);
     color: white;
     padding: 1.5rem;
     border-radius: 1rem;
@@ -96,7 +97,7 @@ input, textarea, select, label, li {
 }
 
 .boton:hover {
-    background-color: #920000;
+    background-color: #800000;
 }
 
 a {

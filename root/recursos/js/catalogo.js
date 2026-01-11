@@ -46,10 +46,16 @@ function filtrarProductos() {
 
     let datosFiltrados = [...datos]
 
+    //packs = -1, individual= 1, todos= 0 
     if(presentacionElegida !== 0) {
-        datosFiltrados = datosFiltrados.filter(
+
+        if(presentacionElegida===-1){
+            datosFiltrados= datosFiltrados.filter(producto=>producto.presentacion>1
+            )
+        }
+        else{datosFiltrados = datosFiltrados.filter(
             producto => producto.presentacion === presentacionElegida
-        )
+        )}
     }
 
     if(tipoVinoElegido !== "todos") {
@@ -66,7 +72,7 @@ function filtrarProductos() {
 }
 
 function controlSelect() {
-    if($filtroPresentacion.value === "2" || $filtroPresentacion.value === "4"){
+    if($filtroPresentacion.value === "-1"){
         $filtroTipoVino.value = "todos"
         $filtroTipoVino.disabled = true
 

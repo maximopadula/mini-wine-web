@@ -4,6 +4,10 @@
     align-items: center;
 }
 
+.seccion-productos__titulo {
+    margin-bottom: 3.2rem;
+}
+
 .contenedor {
     display: grid;
     gap: 2.4rem;
@@ -35,7 +39,7 @@
 }
 
 .boton--ver-catalogo {
-    margin-top: 4rem;
+    margin-top: 4.8rem;
 }
 
 .seccion-delivery__contenedor {
@@ -85,7 +89,7 @@ iframe {
 }
 
 .boton--suma-tu-bodega {
-    margin-top: 4rem;
+    margin-top: 4.8rem;
 }
 
 /*El texto descriptivo */

@@ -1,3 +1,9 @@
+.seccion-productos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .contenedor {
     display: grid;
     gap: 2.4rem;
@@ -26,6 +32,10 @@
 
 .producto-informacion--individual {
     background-color: var(--bordo-oscuro);
+}
+
+.boton--ver-catalogo {
+    margin-top: 4rem;
 }
 
 .seccion-delivery__contenedor {

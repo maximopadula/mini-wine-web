@@ -73,74 +73,84 @@
         </button>
 
         <dialog class="carrito">
-            <section class="carrito__header">
+            <header class="carrito__header">
                 <h2 class="carrito__titulo">Tu carrito (<span></span>)</h2>
                 <button class="carrito__boton"></button>
-            </section>
+            </header>
 
-            <section class="carrito__main">
+            <div class="carrito__body">
                 <div class="carrito__productos">
                     <article class="carrito-tarjeta">
                         <img src="" alt="" class="carrito-tarjeta__imagen">
-                        <h3 class="carrito-tarjeta__titulo"></h3>
-                        <p class="carrito-tarjeta__precio"> <span class="carrito-tarjeta__cantidad"></span></p>
+                        <div class="carrito-tarjeta__info">
+                            <h3 class="carrito-tarjeta__titulo"></h3>
+                            <p class="carrito-tarjeta__precio"></p>
+                        </div>
+                        <div class="carrito-tarjeta__cantidad">
+                            <button class="carrito-tarjeta__boton-cantidad">-</button>
+                            <span class="carrito-tarjeta__cantidad-valor"></span>
+                            <button class="carrito-tarjeta__boton-cantidad">+</button>
+                        </div>
+                        <button class="carrito-tarjeta__boton-eliminar">Eliminar</button>
                     </article>
                 </div>
                 <hr>
                 <div class="carrito__contenedor-formulario">
-                    <form action="" class="carrito__formulario">
+                    <form class="carrito__formulario">
 
-                        <fieldset>
-                            <legend>Tipo de entrega</legend>
-                            <input type="radio">
-                            <input type="radio">
+                        <fieldset class="carrito__fieldset">
+                            <legend class="carrito__label">Tipo de entrega</legend>
+                            <input type="radio" name="entrega" class="carrito__input-radio">
+                            <input type="radio" name="entrega"  class="carrito__input-radio">
                         </fieldset>
 
-                        <label for="metodo-pago"> Método de pago
-                            <select name="" id="metodo-pago"></select>
+                        <label for="metodo-pago" class="carrito__label"> Método de pago
+                            <select id="metodo-pago" class="carrito__select"></select>
                         </label>
 
-                        <label for="nombre-apellido"> Nombre y apellido
-                            <input type="text" id="nombre-apellido">
+                        <label for="nombre-apellido" class="carrito__label"> Nombre y apellido
+                            <input type="text" id="nombre-apellido" class="carrito__input">
                         </label>
 
-                        <label for="provincia"> Provincia
-                            <input type="text" id="provincia">
+                        <label for="provincia" class="carrito__label"> Provincia
+                            <input type="text" id="provincia" class="carrito__input">
                         </label>
 
-                        <label for="localidad"> Localidad
-                            <input type="text" id="localidad">
+                        <label for="localidad" class="carrito__label"> Localidad
+                            <input type="text" id="localidad" class="carrito__input">
                         </label>
 
-                        <label for="direccion"> Dirección (calle, altura, piso y departamento)
-                            <input type="text" id="direccion">
+                        <label for="direccion" class="carrito__label"> Dirección (calle, altura, piso y departamento)
+                            <input type="text" id="direccion" class="carrito__input">
                         </label>
                         
-                        <label for="cp"> Código postal / Código postal argentino
-                            <input type="text" id="cp">
+                        <label for="cp" class="carrito__label"> Código postal / Código postal argentino
+                            <input type="text" id="cp" class="carrito__input">
                         </label>
 
-                        <label for="email">
-                            <input type="email" id="email">
+                        <label for="email" class="carrito__label">
+                            <input type="email" id="email" class="carrito__input">
                         </label>
 
-                        <fieldset>
-                            <legend>Celular</legend>
-                            <input type="number">
-                            <input type="number">
+                        <fieldset class="carrito__fieldset">
+                            <legend class="carrito__label">Teléfono</legend>
+                            <input type="tel" class="carrito__input-telefono">
+                            <input type="tel" class="carrito__input-telefono">
                         </fieldset>
                     </form>
                 </div>
+            </div>
 
-            </section>
-
-            <section class="carrito__footer">
-
-            </section>
+            <footer class="carrito__footer">
+                <p class="carrito__total">Total: <span></span></p>
+                <button class="boton boton--whatsapp"> Continuar pedido por WhatsApp
+                    <img class="icono-whatsapp" src="./recursos/imagenes/icono whatsapp.svg" alt="">
+                </button>
+            </footer>
+        </dialog>
 
         <!-- 
             Dudas IA:
-            -Dudas BEM. Cuándo es un bloque y cuándo no? Una sección sería un bloque?
             -Adentro de un section, van divs?
             -El título del carrito, sería un h2? O sería un h3 o incluso un p?
             -En cada tarjeta, el precio sería p o span?
@@ -148,7 +158,6 @@
             -El botón de submit, en este caso, tendría que estar afuera del form. Por lo que en realidad, el type no puede ser submit?
             -Tiene sentido que haya 3 sections para el carrito? O sería mejor con divs? O incluso poner header, section, footer, o algo así?
         -->
-        </dialog>
 
     <footer class="pie">
         <address class="pie__informacion">

@@ -69,11 +69,97 @@
     </main>
         <button id="btn-carrito-flotante" class="btn-flotante-carrito" aria-label="Ver carrito de compras">
             <img src="./recursos/imagenes/boton-carrito.svg" alt="Carrito" class="btn-flotante-icono">
-    
             <span class="carrito-contador">0</span>
         </button>
-    <footer class="pie">
 
+        <dialog class="carrito">
+            <header class="carrito__header">
+                <h2 class="carrito__titulo">Tu carrito (<span></span>)</h2>
+                <button class="carrito__boton"></button>
+            </header>
+
+            <div class="carrito__body">
+                <div class="carrito__productos">
+                    <article class="carrito-tarjeta">
+                        <img src="" alt="" class="carrito-tarjeta__imagen">
+                        <div class="carrito-tarjeta__info">
+                            <h3 class="carrito-tarjeta__titulo"></h3>
+                            <p class="carrito-tarjeta__precio"></p>
+                        </div>
+                        <div class="carrito-tarjeta__cantidad">
+                            <button class="carrito-tarjeta__boton-cantidad">-</button>
+                            <span class="carrito-tarjeta__cantidad-valor"></span>
+                            <button class="carrito-tarjeta__boton-cantidad">+</button>
+                        </div>
+                        <button class="carrito-tarjeta__boton-eliminar">Eliminar</button>
+                    </article>
+                </div>
+                <hr>
+                <div class="carrito__contenedor-formulario">
+                    <form class="carrito__formulario">
+
+                        <fieldset class="carrito__fieldset">
+                            <legend class="carrito__label">Tipo de entrega</legend>
+                            <input type="radio" name="entrega" class="carrito__input-radio">
+                            <input type="radio" name="entrega"  class="carrito__input-radio">
+                        </fieldset>
+
+                        <label for="metodo-pago" class="carrito__label"> Método de pago
+                            <select id="metodo-pago" class="carrito__select"></select>
+                        </label>
+
+                        <label for="nombre-apellido" class="carrito__label"> Nombre y apellido
+                            <input type="text" id="nombre-apellido" class="carrito__input">
+                        </label>
+
+                        <label for="provincia" class="carrito__label"> Provincia
+                            <input type="text" id="provincia" class="carrito__input">
+                        </label>
+
+                        <label for="localidad" class="carrito__label"> Localidad
+                            <input type="text" id="localidad" class="carrito__input">
+                        </label>
+
+                        <label for="direccion" class="carrito__label"> Dirección (calle, altura, piso y departamento)
+                            <input type="text" id="direccion" class="carrito__input">
+                        </label>
+                        
+                        <label for="cp" class="carrito__label"> Código postal / Código postal argentino
+                            <input type="text" id="cp" class="carrito__input">
+                        </label>
+
+                        <label for="email" class="carrito__label">
+                            <input type="email" id="email" class="carrito__input">
+                        </label>
+
+                        <fieldset class="carrito__fieldset">
+                            <legend class="carrito__label">Teléfono</legend>
+                            <input type="tel" class="carrito__input-telefono">
+                            <input type="tel" class="carrito__input-telefono">
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+
+            <footer class="carrito__footer">
+                <p class="carrito__total">Total: <span></span></p>
+                <button class="boton boton--whatsapp"> Continuar pedido por WhatsApp
+                    <img class="icono-whatsapp" src="./recursos/imagenes/icono whatsapp.svg" alt="">
+                </button>
+            </footer>
+        </dialog>
+
+        <!-- 
+            Dudas IA:
+            -Adentro de un section, van divs?
+            -El título del carrito, sería un h2? O sería un h3 o incluso un p?
+            -En cada tarjeta, el precio sería p o span?
+            -Tiene sentido que haya un "form"?
+            -El botón de submit, en este caso, tendría que estar afuera del form. Por lo que en realidad, el type no puede ser submit?
+            -Tiene sentido que haya 3 sections para el carrito? O sería mejor con divs? O incluso poner header, section, footer, o algo así?
+        -->
+
+    <footer class="pie">
         <address class="pie__informacion">
             <a class="pie__link" href="https://www.instagram.com/miniwine_/" target="_blank" rel="noopener noreferrer">
                 <img class="pie__icono" src="./recursos/imagenes/icono instagram.svg" alt="Ícono de Instagram">

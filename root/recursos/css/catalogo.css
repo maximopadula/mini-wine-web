@@ -200,6 +200,16 @@
     border: 2px solid white; /* Borde blanco para separarlo del botón grande */
 }
 
+/* CARRITO */
+.carrito {
+    height: 100vh;
+    max-height: 100vh;
+    width: 50rem;
+    margin-left: auto;
+    border: none;
+}
+
+
 @media (min-width: 768px) {
 
 }

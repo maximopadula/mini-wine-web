@@ -218,10 +218,27 @@
     display: flex;
     justify-content: space-between;
     box-shadow: var(--sombra-header-footer);
+    align-items: center;
+}
+
+.carrito__boton {
+    background: none;
+    border: none;
+    width: 4rem;
+    height: 4rem;
+}
+
+.carrito__boton:hover {
+    cursor: pointer;
+}
+
+.carrito__boton-imagen {
+    height: 100%;
 }
 
 .carrito__titulo {
     margin: 0;
+    font-size: var(--subtitulo);
 }
 
 .carrito__body {
@@ -332,7 +349,7 @@
 }
 
 .carrito__header, .carrito__body, .carrito__footer {
-    padding: 1rem;
+    padding: 2rem;
 }
 
 @media (min-width: 768px) {

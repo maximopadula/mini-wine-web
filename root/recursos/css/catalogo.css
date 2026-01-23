@@ -370,6 +370,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 1rem;
 }
 
 .carrito__radio-label:hover {

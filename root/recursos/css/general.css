@@ -101,6 +101,7 @@ p, input, textarea, select, label, li {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: row-reverse;
     gap: 1rem;
 }
 

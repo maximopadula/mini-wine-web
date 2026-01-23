@@ -29,6 +29,3 @@ function chequearAncho(e) {
 }
 
 mediaQuery.addEventListener("change", chequearAncho);
-
-const $carrito = document.querySelector(".carrito")
-$carrito.showModal()

@@ -343,6 +343,11 @@
     font-size: var(--parrafo);
     font-weight: bold;
     gap: 1rem;
+}
+
+.carrito__legend {
+    font-size: var(--parrafo);
+    font-weight: bold;
     margin-bottom: 1rem;
 }
 

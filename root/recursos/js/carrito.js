@@ -130,12 +130,34 @@ function agregarListenersProductos() {
 
             actualizarCantidad(id, accion);
         });
-    });
+
+    const botonesEliminar = document.querySelectorAll('.carrito-tarjeta__boton-eliminar')
+    
+    botonesEliminar.forEach(botonEliminar =>{
+        botonEliminar.addEventListener('click', (e)=>{
+            
+            const id = e.currentTarget.dataset.id
+
+            eliminarProductoCarrito(id)
+        })
+    })
+});
     
     //Añadir lógica del botón eliminar
-    // function eliminarProductoCarrito(){
+    function eliminarProductoCarrito(idProducto){
+        
+        //Buscamos el índice del producto en el arreglo 
+        const indiceProducto = carrito.findIndex(producto => producto.id == idProducto)
 
-    // }
+        if(indiceProducto !==-1 ){
+            //Borramos un elemento en esa posición
+            carrito.splice(indiceProducto, 1)
+
+            //Se actualiza todo
+            renderizarCarrito();
+            guardarCarrito();
+        }
+    }
 }
 
 // ==================================================================

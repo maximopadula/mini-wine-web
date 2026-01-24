@@ -75,38 +75,49 @@
 
         <dialog class="carrito">
             <header class="carrito__header">
-                <h2 class="carrito__titulo">Tu carrito (<span></span>)</h2>
-                <button class="carrito__boton-cerrar"></button>
+                <h2 class="carrito__titulo">Mi pedido (<span></span>)</h2>
+                <button class="carrito__boton-cerrar">
+                    <img class="carrito__boton-imagen" src="./recursos/imagenes/icono-cerrar-menu.svg" alt="">
+                </button>
             </header>
 
             <div class="carrito__body">
                 <div class="carrito__productos">
-                    <!-- <article class="carrito-tarjeta">
+                  <article class="carrito-tarjeta">
                         <img src="" alt="" class="carrito-tarjeta__imagen">
                         <div class="carrito-tarjeta__info">
                             <h3 class="carrito-tarjeta__titulo"></h3>
                             <p class="carrito-tarjeta__precio"></p>
                         </div>
-                        <div class="carrito-tarjeta__cantidad">
-                            <button class="carrito-tarjeta__boton-cantidad">-</button>
-                            <span class="carrito-tarjeta__cantidad-valor"></span>
-                            <button class="carrito-tarjeta__boton-cantidad">+</button>
-                        </div>
-                        <button class="carrito-tarjeta__boton-eliminar">Eliminar</button>
-                    </article> -->
+                        <div class="carrito-tarjeta__controles">
+                            <div class="carrito-tarjeta__cantidad">
+                                <button class="carrito-tarjeta__boton-cantidad">-</button>
+                                <span class="carrito-tarjeta__cantidad-valor"></span>
+                                <button class="carrito-tarjeta__boton-cantidad">+</button>                           
+                            </div>
+                            <button class="carrito-tarjeta__boton-eliminar">
+                                <img src="./recursos/imagenes/icono-borrar.svg" alt="">
+                            </button>   
+                        </div>                      
+                    </article>
                 </div>
-                <hr>
                 <div class="carrito__contenedor-formulario">
                     <form class="carrito__formulario">
 
-                        <fieldset class="carrito__fieldset">
-                            <legend class="carrito__label">Tipo de entrega</legend>
-                            <input type="radio" name="entrega" class="carrito__input-radio">
-                            <input type="radio" name="entrega"  class="carrito__input-radio">
+                        <fieldset class="carrito__fieldset carrito__fieldset--entrega">
+                            <legend class="carrito__legend">Método de entrega</legend>
+
+                            <label for="boton-retiro" class="carrito__radio-label">Retiro (Calandria 667)
+                                <input type="radio" id="boton-retiro" name="entrega" class="carrito__input-radio">
+                            </label>
+
+                            <label for="boton-envio" class="carrito__radio-label">Envío
+                                <input type="radio" id="boton-envio" name="entrega"  class="carrito__input-radio">
+                            </label>
                         </fieldset>
 
                         <label for="metodo-pago" class="carrito__label"> Método de pago
-                            <select id="metodo-pago" class="carrito__select"></select>
+                            <select id="metodo-pago" class="carrito__input"></select>
                         </label>
 
                         <label for="nombre-apellido" class="carrito__label"> Nombre y apellido
@@ -122,30 +133,30 @@
                         </label>
 
                         <label for="direccion" class="carrito__label"> Dirección (calle, altura, piso y departamento)
-                            <input type="text" id="direccion" class="carrito__input">
+                            <input type="text" id="direccion" class="carrito__input" placeholder="Av. Rivadavia 123, 2do B">
                         </label>
                         
                         <label for="cp" class="carrito__label"> Código postal / Código postal argentino
                             <input type="text" id="cp" class="carrito__input">
                         </label>
 
-                        <label for="email" class="carrito__label">
+                        <label for="email" class="carrito__label">Correo electrónico
                             <input type="email" id="email" class="carrito__input">
                         </label>
 
-                        <fieldset class="carrito__fieldset">
-                            <legend class="carrito__label">Teléfono</legend>
-                            <input type="tel" class="carrito__input-telefono">
-                            <input type="tel" class="carrito__input-telefono">
+                        <fieldset class="carrito__fieldset carrito__fieldset--telefono">
+                            <legend class="carrito__legend">Teléfono</legend>
+                            <input type="tel" class="carrito__input carrito__input--telefono" placeholder="Código de área sin el cero (ej: 351)">
+                            <input type="tel" class="carrito__input carrito__input--telefono" placeholder="Celular sin el 15">
                         </fieldset>
                     </form>
                 </div>
             </div>
 
             <footer class="carrito__footer">
-                <p class="carrito__total">Total: <span></span></p>
+                <p class="carrito__total">Total productos: <span></span></p>
                 <button class="boton boton--whatsapp"> Continuar pedido por WhatsApp
-                    <img class="icono-whatsapp" src="./recursos/imagenes/icono whatsapp.svg" alt="">
+                    <img class="icono-whatsapp" src="./recursos/imagenes/icono-whatsapp-boton.svg" alt="">
                 </button>
             </footer>
         </dialog>

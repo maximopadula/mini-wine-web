@@ -74,11 +74,7 @@ h3, h4 {
     font-size: var(--subtitulo);
 }
 
-p {
-    font-size: var(--parrafo);
-}
-
-input, textarea, select, label, li {
+p, input, textarea, select, label, li {
     font-size: var(--parrafo);
 }
 
@@ -98,6 +94,19 @@ input, textarea, select, label, li {
 
 .boton:hover {
     background-color: #800000;
+}
+
+.boton--whatsapp {
+    background-color: #25D366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+    gap: 1rem;
+}
+
+.boton--whatsapp:hover {
+   background-color: #17853f;
 }
 
 a {

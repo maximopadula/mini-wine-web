@@ -90,12 +90,16 @@ function renderizarCarrito() {
                 <h3 class="carrito-tarjeta__titulo">${producto.nombre}</h3>
                 <p class="carrito-tarjeta__precio">$${subtotalProducto}</p>
             </div>
-            <div class="carrito-tarjeta__cantidad">
-                <button class="carrito-tarjeta__boton-cantidad" data-accion="restar" data-id="${producto.id}"${atributoDisabled}>-</button>
-                <span class="carrito-tarjeta__cantidad-valor">${producto.cantidad}</span>
-                <button class="carrito-tarjeta__boton-cantidad" data-accion="sumar" data-id="${producto.id}">+</button>
+            <div class="carrito-tarjeta__controles">
+                <div class="carrito-tarjeta__cantidad">
+                    <button class="carrito-tarjeta__boton-cantidad" data-accion="restar" data-id="${producto.id}"${atributoDisabled}>-</button>
+                    <span class="carrito-tarjeta__cantidad-valor">${producto.cantidad}</span>
+                    <button class="carrito-tarjeta__boton-cantidad" data-accion="sumar" data-id="${producto.id}">+</button>
+                </div>
+                <button class="carrito-tarjeta__boton-eliminar" data-id="${producto.id}">
+                    <img src="./recursos/imagenes/icono-borrar.svg" alt="">
+                </button>
             </div>
-            <button class="carrito-tarjeta__boton-eliminar" data-id="${producto.id}">Eliminar</button>
         `;
 
         contenedorProductos.appendChild(article);

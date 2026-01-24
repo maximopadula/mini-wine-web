@@ -41,7 +41,7 @@ function agregarListenersBotonesCarrito() {
     });
 }
 
-function cargarFiltroBodegas(productos)
+function cargarSelectBodegas(productos)
 {
     //Limpiamos opciones viejas dejando la que se encuentre por defecto
     $filtroBodega.innerHTML= '<option value= "todas">Todas las bodegas</option>'
@@ -64,7 +64,7 @@ function cargarFiltroBodegas(productos)
     })
 }
 
-function cargarFiltroTipoVinos(productos){
+function cargarSelectTipoVinos(productos){
     $filtroTipoVino.innerHTML= '<option value= "todos">Todos los tipos</option>'
 
     const listaTiposVinos= productos.map(producto=>producto.tipo)
@@ -128,6 +128,6 @@ function controlSelect() {
     }
 }
 
-cargarFiltroTipoVinos(datos)
-cargarFiltroBodegas(datos)
+cargarSelectTipoVinos(datos)
+cargarSelectBodegas(datos)
 filtrarProductos();

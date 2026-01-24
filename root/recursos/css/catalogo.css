@@ -112,31 +112,10 @@
     padding-left: 1rem;
 }
 
-/* ==========================================================================
-   CORRECCIÓN AQUÍ: Actualizamos el selector a '.boton--agregar-al-carrito'
-   y le ponemos el color bordó y texto blanco.
-   ========================================================================== */
 .boton--agregar-al-carrito {
-    display: flex;       /* Clave! Hace que icono y texto se pongan lado a lado */
-    align-items: center; /* Centra el texto verticalmente respecto al icono */
-    justify-content: center; /* Centra el contenido horizontalmente */
-
-    background-color: var(--bordo); /* COLOR DE FONDO: Bordó de tu marca */
-    color: white;                   /* COLOR DE TEXTO: Blanco */
-    
-    border: none;        /* Sin borde */
-    border-radius: 5px;  /* Bordes redondeados */
-    padding: 10px;       /* Espacio interno */
-    cursor: pointer;     /* Manito al pasar el mouse */
-    transition: all 0.3s ease; /* Suavizar animaciones */
-    width: 100%;         /* Ocupa el ancho disponible */
-    gap: 10px;           /* Espacio entre icono y texto */
-}
-
-/* Efecto al pasar el mouse por encima del carrito */
-.boton--agregar-al-carrito:hover {
-    transform: scale(1.05); /* Se agranda un poquito */
-    filter: brightness(0.9); /* Se oscurece un poco */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .tarjeta-producto__icono-carrito {
@@ -210,7 +189,9 @@
     max-width: 50rem;
     margin-left: auto;
     border: none;
-    
+}
+
+.carrito[open] {
     display: grid;
     grid-template-rows: auto 1fr auto;
 }
@@ -222,14 +203,14 @@
     align-items: center;
 }
 
-.carrito__boton {
+.carrito__boton-cerrar {
     background: none;
     border: none;
     width: 4rem;
     height: 4rem;
 }
 
-.carrito__boton:hover {
+.carrito__boton-cerrar:hover {
     cursor: pointer;
 }
 

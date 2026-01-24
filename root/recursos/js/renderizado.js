@@ -14,7 +14,7 @@ function renderizarCatalogo(arreglo, $contenedor) {
                     <p class="tarjeta-producto__parrafo">${element.descripcion}</p>
                     <p class="tarjeta-producto__precio"><strong>$${element.precio}</strong></p>
 
-                    <button data-id="${element.id}" class="boton--agregar-al-carrito btn-agregar-carrito" aria-label="Agregar al carrito">
+                    <button data-id="${element.id}" class="boton boton--agregar-al-carrito" aria-label="Agregar al carrito">
                         <img class="tarjeta-producto__icono-carrito" src="./recursos/imagenes/boton-agregar-carrito.svg" alt="" />
                         <p class="tarjeta-producto__parrafo-carrito">Agregar al carrito</p>
                     </button>

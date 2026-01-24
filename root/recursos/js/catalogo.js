@@ -17,7 +17,7 @@ $filtroTipoVino.addEventListener("change", filtrarProductos)
 $filtroBodega.addEventListener("change", filtrarProductos)
 function agregarListenersBotonesCarrito() {
     // 1. Seleccionar todos los botones con la clase específica que pusimos en renderizado.js
-    const botonesAgregar = document.querySelectorAll('.btn-agregar-carrito');
+    const botonesAgregar = document.querySelectorAll('.boton--agregar-al-carrito');
 
     botonesAgregar.forEach(boton => {
         // 2. Añadir un listener para el evento 'click' a cada botón

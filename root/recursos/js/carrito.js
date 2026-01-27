@@ -19,6 +19,7 @@ const contenedorProductos = document.querySelector('.carrito__productos');
 const spanCantidadTotal = document.querySelector('.carrito__titulo span');
 const spanPrecioTotal = document.querySelector('.carrito__total span');
 const contadorFlotante = document.querySelector('.carrito-contador');
+const $selectMetodoPago = document.getElementById("metodo-pago")
 
 // ==================================================================
 // 3. FUNCIONES LÓGICAS DEL CARRITO
@@ -142,6 +143,27 @@ function agregarListenersProductos() {
     });
 }
 
+function llenarSelectMetodoPago(datos) {
+
+    const defaultOption = document.createElement("option")
+    defaultOption.textContent = "--- Seleccione una opción ---"
+    defaultOption.value = ""
+    defaultOption.selected = true
+    defaultOption.disabled = true
+
+    $selectMetodoPago.appendChild(defaultOption)
+
+    datos.forEach(metodo => {
+        if(metodo.activo) {
+            const option = document.createElement("option");
+            option.value = metodo.id
+            option.textContent = metodo.nombre
+
+            $selectMetodoPago.appendChild(option)
+        }
+    })
+}
+
 // ==================================================================
 // 4. FUNCIONES DEL POPUP (DIALOG)
 // ==================================================================
@@ -183,4 +205,4 @@ if (dialogCarrito) {
 // ==================================================================
 renderizarCarrito();
 
-export { agregarAlCarrito };
+export { agregarAlCarrito, llenarSelectMetodoPago };

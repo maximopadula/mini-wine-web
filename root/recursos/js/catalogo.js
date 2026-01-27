@@ -1,8 +1,9 @@
 import { obtenerDatos } from "./datos.js";
 import { renderizarCatalogo } from "./renderizado.js";
-import { agregarAlCarrito } from "./carrito.js";
+import { agregarAlCarrito, llenarSelectMetodoPago } from "./carrito.js";
 
 const datos = await obtenerDatos("./datos/catalogo.json");
+const datosMetodosPago = await obtenerDatos("./datos/metodos-pago.json")
 const $contenedor = document.getElementById("seccion-productos")
 const $filtroPresentacion = document.getElementById("id-presentacion")
 const $filtroTipoVino = document.getElementById("id-tipo-vino") 
@@ -132,3 +133,4 @@ function controlSelect() {
 cargarSelectTipoVinos(datos)
 cargarSelectBodegas(datos)
 filtrarProductos();
+llenarSelectMetodoPago(datosMetodosPago)

@@ -28,4 +28,20 @@ function renderizarCatalogo(arreglo, $contenedor) {
     $contenedor.innerHTML = HTMLproductos;
 }
 
-export { renderizarCatalogo };
+function mostrarMensajeError(contenedorErrores, nombre, email, telefono, comentario) {
+
+    const errores = validarCampos(nombre, email, telefono, comentario)
+
+    if(errores.length === 0) {
+        contenedorErrores.style.display = "none"
+        contenedorErrores.innerHTML = ""
+    } else {
+        contenedorErrores.style.display = "block"
+        contenedorErrores.innerHTML = errores[0]
+        contenedorErrores.style.color = "#ff4545";
+    }
+
+    // return errores.length
+}
+
+export { renderizarCatalogo, mostrarMensajeError, preseleccionarMotivo };

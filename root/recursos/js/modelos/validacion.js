@@ -60,22 +60,6 @@ function validarCampos(nombre, email, telefono, comentario) {
     return errores
 }
 
-function mostrarMensajeError(contenedorErrores, nombre, email, telefono, comentario) {
-
-    const errores = validarCampos(nombre, email, telefono, comentario)
-
-    if(errores.length === 0) {
-        contenedorErrores.style.display = "none"
-        contenedorErrores.innerHTML = ""
-    } else {
-        contenedorErrores.style.display = "block"
-        contenedorErrores.innerHTML = errores[0]
-        contenedorErrores.style.color = "#ff4545";
-    }
-
-    return errores.length
-}
-
 function crearMensajeWhatsapp(mensaje, numeroWhatsApp) {
 
     // 3. Construye el mensaje con los datos (usando \n para saltos de línea)

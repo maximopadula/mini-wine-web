@@ -1,208 +1,53 @@
-// ==================================================================
-// 1. ESTADO Y ALMACENAMIENTO
-// ==================================================================
-
-let carrito = JSON.parse(localStorage.getItem('carritoCompras')) || [];
+let carrito = JSON.parse(localStorage.getItem('carritoCompras')) || []
 
 function guardarCarrito() {
-    localStorage.setItem('carritoCompras', JSON.stringify(carrito));
+    localStorage.setItem('carritoCompras', JSON.stringify(carrito))
 }
 
-// ==================================================================
-// 2. SELECCIÓN DE ELEMENTOS DEL DOM
-// ==================================================================
-const dialogCarrito = document.querySelector('.carrito');
-const btnAbrirCarrito = document.querySelector('.btn-flotante-carrito');
-const btnCerrarCarrito = document.querySelector('.carrito__boton-cerrar');
-
-const contenedorProductos = document.querySelector('.carrito__productos');
-const spanCantidadTotal = document.querySelector('.carrito__titulo span');
-const spanPrecioTotal = document.querySelector('.carrito__total span');
-const contadorFlotante = document.querySelector('.carrito-contador');
-const $selectMetodoPago = document.getElementById("metodo-pago")
-
-// ==================================================================
-// 3. FUNCIONES LÓGICAS DEL CARRITO
-// ==================================================================
-
 function agregarAlCarrito(productoNuevo) {
-    const productoExistente = carrito.find(item => item.id === productoNuevo.id);
+    const productoExistente = carrito.find(item => item.id === productoNuevo.id)
 
     if (productoExistente) {
-        productoExistente.cantidad++;
+        productoExistente.cantidad++
     } else {
-        carrito.push({ ...productoNuevo, cantidad: 1 });
+        carrito.push({ ...productoNuevo, cantidad: 1 })
     }
 
-    renderizarCarrito();
-    guardarCarrito();
+    guardarCarrito()
+    return carrito
 }
 
 // --- NUEVA FUNCIÓN INDEPENDIENTE (GLOBAL) ---
 // La sacamos afuera para que 'actualizarCantidad' la pueda ver
 function eliminarDelCarrito(idProducto) {
-    const indice = carrito.findIndex(producto => producto.id == idProducto);
+    const indice = carrito.findIndex(producto => producto.id == idProducto)
 
     if (indice !== -1) {
-        carrito.splice(indice, 1);
-        renderizarCarrito();
-        guardarCarrito();
+        carrito.splice(indice, 1)
+        guardarCarrito()
     }
+
+    return carrito
 }
 
 function actualizarCantidad(idProducto, accion) {
-    const producto = carrito.find(item => item.id == idProducto);
+    const producto = carrito.find(item => item.id == idProducto)
 
     if (producto) {
         if (accion === "sumar") {
-            producto.cantidad++;
-            renderizarCarrito();
-            guardarCarrito();
+            producto.cantidad++
+            guardarCarrito()
 
         } else if (accion === "restar") {
             if (producto.cantidad > 1) {
-                producto.cantidad--;
-                renderizarCarrito();
-                guardarCarrito();
+                producto.cantidad--
+                guardarCarrito()
             } else {
-                eliminarDelCarrito(idProducto);
+                eliminarDelCarrito(idProducto)
             }
-        }
+        }        
     }
+    return carrito
 }
 
-// Función para dibujar el carrito en el HTML
-function renderizarCarrito() {
-    contenedorProductos.innerHTML = '';
-
-    let cantidadTotal = 0;
-    let precioTotal = 0;
-
-    carrito.forEach(producto => {
-        cantidadTotal += producto.cantidad;
-        precioTotal += producto.precio * producto.cantidad;
-
-        const subtotalProducto = producto.precio * producto.cantidad;
-
-        const article = document.createElement('article');
-        article.classList.add('carrito-tarjeta');
-
-        article.innerHTML = `
-            <img src="${producto.imagen.src}" alt="${producto.nombre}" class="carrito-tarjeta__imagen">
-            <div class="carrito-tarjeta__info">
-                <h3 class="carrito-tarjeta__titulo">${producto.nombre}</h3>
-                <p class="carrito-tarjeta__precio">$${subtotalProducto}</p>
-            </div>
-            <div class="carrito-tarjeta__controles">
-                <div class="carrito-tarjeta__cantidad">
-                    <button class="carrito-tarjeta__boton-cantidad" data-accion="restar" data-id="${producto.id}">-</button>
-                    <span class="carrito-tarjeta__cantidad-valor">${producto.cantidad}</span>
-                    <button class="carrito-tarjeta__boton-cantidad" data-accion="sumar" data-id="${producto.id}">+</button>
-                </div>
-                <button class="carrito-tarjeta__boton-eliminar" data-id="${producto.id}">
-                    <img src="./recursos/imagenes/icono-borrar.svg" alt="Eliminar">
-                </button>
-            </div>
-        `;
-
-        contenedorProductos.appendChild(article);
-    });
-
-    spanCantidadTotal.textContent = cantidadTotal || '0';
-    spanPrecioTotal.textContent = `$${precioTotal.toFixed(2)}`;
-
-    if (contadorFlotante) {
-        contadorFlotante.textContent = cantidadTotal || '0';
-    }
-
-    agregarListenersProductos();
-}
-
-// Función para escuchar los botones dentro del carrito
-function agregarListenersProductos() {
-    // 1. Listeners para CANTIDAD (+ y -)
-    const botonesCantidad = document.querySelectorAll('.carrito-tarjeta__boton-cantidad');
-
-    botonesCantidad.forEach(boton => {
-        boton.addEventListener('click', (e) => {
-            const id = e.target.dataset.id;
-            const accion = e.target.dataset.accion;
-            actualizarCantidad(id, accion);
-        });
-    });
-
-    // 2. Listeners para ELIMINAR
-    const botonesEliminar = document.querySelectorAll('.carrito-tarjeta__boton-eliminar');
-
-    botonesEliminar.forEach(boton => {
-        boton.addEventListener('click', (e) => {
-            // Usamos currentTarget por seguridad (igual que en el catálogo)
-            const id = e.currentTarget.dataset.id;
-            eliminarDelCarrito(id);
-        });
-    });
-}
-
-function llenarSelectMetodoPago(datos) {
-
-    const defaultOption = document.createElement("option")
-    defaultOption.textContent = "--- Seleccione una opción ---"
-    defaultOption.value = ""
-    defaultOption.selected = true
-    defaultOption.disabled = true
-
-    $selectMetodoPago.appendChild(defaultOption)
-
-    datos.forEach(metodo => {
-        if(metodo.activo) {
-            const option = document.createElement("option");
-            option.value = metodo.id
-            option.textContent = metodo.nombre
-
-            $selectMetodoPago.appendChild(option)
-        }
-    })
-}
-
-// ==================================================================
-// 4. FUNCIONES DEL POPUP (DIALOG)
-// ==================================================================
-
-function abrirCarrito() {
-    if (dialogCarrito) {
-        dialogCarrito.showModal();
-    }
-}
-
-function cerrarCarrito() {
-    if (dialogCarrito) {
-        dialogCarrito.close();
-    }
-}
-
-// ==================================================================
-// 5. EVENT LISTENERS PRINCIPALES
-// ==================================================================
-
-if (btnAbrirCarrito) {
-    btnAbrirCarrito.addEventListener('click', abrirCarrito);
-}
-
-if (btnCerrarCarrito) {
-    btnCerrarCarrito.addEventListener('click', cerrarCarrito);
-}
-
-if (dialogCarrito) {
-    dialogCarrito.addEventListener('click', (event) => {
-        if (event.target === dialogCarrito) {
-            cerrarCarrito();
-        }
-    });
-}
-
-// ==================================================================
-// 6. INICIALIZACIÓN
-// ==================================================================
-renderizarCarrito();
-
-export { agregarAlCarrito, llenarSelectMetodoPago };
+export { agregarAlCarrito, eliminarDelCarrito, actualizarCantidad}

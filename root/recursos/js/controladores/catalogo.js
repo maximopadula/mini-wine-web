@@ -1,13 +1,23 @@
-import { obtenerDatos } from "./datos.js";
-import { renderizarCatalogo } from "./renderizado.js";
-import { agregarAlCarrito, llenarSelectMetodoPago } from "./carrito.js";
+import { obtenerDatos } from "../modelos/datos.js";
+import { renderizarCatalogo, renderizarCarrito, llenarSelectMetodoPago, cargarFiltroCatalogo, mostrarCarrito, ocultarCarrito, mostrarMensajeError } from "../vistas/renderizado.js";
+import { agregarAlCarrito, eliminarDelCarrito, actualizarCantidad } from "../modelos/carrito.js";
 
-const datos = await obtenerDatos("./datos/catalogo.json");
-const datosMetodosPago = await obtenerDatos("./datos/metodos-pago.json")
+const datos = await obtenerDatos("../../../datos/catalogo.json");
+const datosMetodosPago = await obtenerDatos("../../../datos/metodos-pago.json")
 const $contenedor = document.getElementById("seccion-productos")
 const $filtroPresentacion = document.getElementById("id-presentacion")
 const $filtroTipoVino = document.getElementById("id-tipo-vino") 
 const $filtroBodega= document.getElementById("id-bodega")
+
+//Carrito
+const dialogCarrito = document.querySelector('.carrito');
+const btnAbrirCarrito = document.querySelector('.btn-flotante-carrito');
+const btnCerrarCarrito = document.querySelector('.carrito__boton-cerrar');
+const contenedorProductos = document.querySelector('.carrito__productos');
+const spanCantidadTotal = document.querySelector('.carrito__titulo span');
+const spanPrecioTotal = document.querySelector('.carrito__total span');
+const contadorFlotante = document.querySelector('.carrito-contador');
+const $selectMetodoPago = document.getElementById("metodo-pago")
 
 $filtroPresentacion.addEventListener("change", () => {
     controlSelect();
@@ -16,6 +26,22 @@ $filtroPresentacion.addEventListener("change", () => {
 
 $filtroTipoVino.addEventListener("change", filtrarProductos)
 $filtroBodega.addEventListener("change", filtrarProductos)
+
+if (btnAbrirCarrito) {
+    btnAbrirCarrito.addEventListener('click', abrirCarrito)
+}
+
+if (btnCerrarCarrito) {
+    btnCerrarCarrito.addEventListener('click', cerrarCarrito)
+}
+
+if (dialogCarrito) {
+    dialogCarrito.addEventListener('click', (event) => {
+        if (event.target === dialogCarrito) {
+            cerrarCarrito()
+        }
+    })
+}
 
 function agregarListenersBotonesCarrito() {
     // 1. Seleccionar todos los botones con la clase específica que pusimos en renderizado.js
@@ -43,45 +69,31 @@ function agregarListenersBotonesCarrito() {
     });
 }
 
-function cargarSelectBodegas(productos)
-{
-    //Limpiamos opciones viejas dejando la que se encuentre por defecto
-    $filtroBodega.innerHTML= '<option value= "todas">Todas las bodegas</option>'
+// Función para escuchar los botones dentro del carrito
+function agregarListenersProductos() {
+    // 1. Listeners para CANTIDAD (+ y -)
+    const botonesCantidad = document.querySelectorAll('.carrito-tarjeta__boton-cantidad')
 
-    //Obtenemos la lista de nombre de bodegas
-    const listaBodegas= productos.map(producto => producto.bodega)
+    botonesCantidad.forEach(boton => {
+        boton.addEventListener('click', (e) => {
+            const id = e.target.dataset.id
+            const accion = e.target.dataset.accion
+            actualizarCantidad(id, accion)
+        })
+    })
 
-    //Set sirve para eliminar duplicados automáticamente
-    const bodegasUnicas = [...new Set(listaBodegas)]
+    // 2. Listeners para ELIMINAR
+    const botonesEliminar = document.querySelectorAll('.carrito-tarjeta__boton-eliminar')
 
-    bodegasUnicas.forEach(bodega =>{
-
-        // El if(bodega) evita que se agreguen opciones vacías (como las de los Packs
-        if(bodega){
-            const option= document.createElement('option') 
-            option.value = bodega
-            option.textContent= bodega
-            $filtroBodega.appendChild(option)
-        }
+    botonesEliminar.forEach(boton => {
+        boton.addEventListener('click', (e) => {
+            // Usamos currentTarget por seguridad (igual que en el catálogo)
+            const id = e.currentTarget.dataset.id
+            eliminarDelCarrito(id)
+        })
     })
 }
 
-function cargarSelectTipoVinos(productos){
-    $filtroTipoVino.innerHTML= '<option value= "todos">Todos los tipos</option>'
-
-    const listaTiposVinos= productos.map(producto=>producto.tipo)
-
-       const tiposVinoUnicos = [...new Set(listaTiposVinos)]
-    
-    tiposVinoUnicos.forEach(tipoVino=>{
-        if(tipoVino){
-            const option= document.createElement('option')
-            option.value= tipoVino
-            option.textContent= tipoVino
-            $filtroTipoVino.appendChild(option)
-        }
-    })
-}
 function filtrarProductos() {
 
     const presentacionElegida = Number($filtroPresentacion.value)

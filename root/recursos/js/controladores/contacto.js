@@ -1,4 +1,6 @@
-import {mostrarMensajeError, crearMensajeWhatsapp} from "./validacion.js";
+import { mostrarMensajeError } from "../vistas/renderizado.js";
+import { validarCampos } from "../modelos/validacion.js";
+import { crearPlantillaMensajeContacto, crearLinkMensajeWhatsapp } from "../modelos/mensaje.js";
 
 const $contenedorErrores = document.getElementById("formulario__errores")
 const $formularioContacto = document.getElementById("formulario-contacto")
@@ -16,37 +18,34 @@ document.addEventListener('DOMContentLoaded', ()=>{
         if ($selectMotivo){
             
             //Como en el html los <option> no tienen el atributo value, se escribe la opción directamente del select que se desee seleccionar
-            $selectMotivo.value= "Quiero trabajar con Mini Wine"
+            $selectMotivo.value = "Quiero trabajar con Mini Wine"
         }
     }
 })
 
 $formularioContacto.addEventListener("submit", (evento) => {
+
+    evento.preventDefault()
+
     const $nombre = document.getElementById('id-nombre').value.trim();
     const $email = document.getElementById('id-email').value.trim();
     const $telefono = document.getElementById('id-telefono').value.trim();
     const $motivoContacto = document.getElementById('id-motivo').value.trim();
     const $comentario = document.getElementById('id-comentario').value.trim();
 
-    const mensajeSumaTuViñedo = `Mensaje proveniente de *CONTACTO* del sitio de Mini Wine:
+    const errores = validarCampos($nombre, $email, $telefono, $comentario)
 
-    *•Motivo de contacto:* ${$motivoContacto}
+    mostrarMensajeError($contenedorErrores, errores)
 
-    *•Nombre*: ${$nombre}
+    if(errores.length === 0) {
 
-    *•Email*: ${$email}
+        const datosFormulario = {$nombre, $email, $telefono, $motivoContacto, $comentario}
 
-    *•Teléfono*: ${$telefono}
+        const textoMensaje = crearPlantillaMensajeContacto(datosFormulario)
 
-    *•Comentario*: 
-    ${$comentario}
-`
-    evento.preventDefault()
+        const urlWhatsApp = crearLinkMensajeWhatsapp(textoMensaje, numeroWhatsApp)
 
-    const errores = mostrarMensajeError($contenedorErrores, $nombre, $email, $telefono, $comentario)
-
-    if(errores === 0) {
-        crearMensajeWhatsapp(mensajeSumaTuViñedo, numeroWhatsApp)
+        window.open(urlWhatsApp, '_blank');
     }
 })
 

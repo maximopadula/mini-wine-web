@@ -47,7 +47,7 @@ function renderizarCarrito(carrito, contenedorProductos, spanCantidadTotal, span
         article.innerHTML = `
             <img src="${producto.imagen.src}" alt="${producto.nombre}" class="carrito-tarjeta__imagen">
             <div class="carrito-tarjeta__info">
-                <h3 class="carrito-tarjeta__titulo">${producto.nombre}</h3>
+                <h3 class="carrito-tarjeta__titulo">${producto.nombre} ${producto.bodega ? `- ${producto.bodega}` : ""}</h3>
                 <p class="carrito-tarjeta__precio">$${subtotalProducto}</p>
             </div>
             <div class="carrito-tarjeta__controles">
@@ -68,12 +68,9 @@ function renderizarCarrito(carrito, contenedorProductos, spanCantidadTotal, span
     spanCantidadTotal.textContent = cantidadTotal
     spanPrecioTotal.textContent = `$${precioTotal.toFixed(2)}`
     contadorFlotante.textContent = cantidadTotal
-
-
-    agregarListenersProductos()
 }
 
-function llenarSelectMetodoPago(datos, $selectMetodoPago) {
+function cargarSelectMetodoPago(datos, $selectMetodoPago) {
 
     const defaultOption = document.createElement("option")
     defaultOption.textContent = "--- Seleccione una opción ---"
@@ -135,4 +132,4 @@ function mostrarMensajeError(contenedorErrores, errores) {
     }
 }
 
-export { renderizarCatalogo, renderizarCarrito, llenarSelectMetodoPago, cargarFiltroCatalogo, mostrarCarrito, ocultarCarrito, mostrarMensajeError};
+export { renderizarCatalogo, renderizarCarrito, cargarSelectMetodoPago, cargarFiltroCatalogo, mostrarCarrito, ocultarCarrito, mostrarMensajeError};

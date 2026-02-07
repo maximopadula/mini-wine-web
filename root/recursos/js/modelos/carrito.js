@@ -14,7 +14,7 @@ function agregarAlCarrito(productoNuevo) {
     }
 
     guardarCarrito()
-    return carrito
+    obtenerCarrito()
 }
 
 // --- NUEVA FUNCIÓN INDEPENDIENTE (GLOBAL) ---
@@ -27,7 +27,7 @@ function eliminarDelCarrito(idProducto) {
         guardarCarrito()
     }
 
-    return carrito
+    obtenerCarrito()
 }
 
 function actualizarCantidad(idProducto, accion) {
@@ -47,7 +47,11 @@ function actualizarCantidad(idProducto, accion) {
             }
         }        
     }
+    obtenerCarrito()
+}
+
+function obtenerCarrito() {
     return carrito
 }
 
-export { agregarAlCarrito, eliminarDelCarrito, actualizarCantidad}
+export { agregarAlCarrito, eliminarDelCarrito, actualizarCantidad, obtenerCarrito}

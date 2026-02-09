@@ -132,4 +132,18 @@ function mostrarMensajeError(contenedorErrores, errores) {
     }
 }
 
-export { renderizarCatalogo, renderizarCarrito, cargarSelectMetodoPago, cargarFiltroCatalogo, mostrarCarrito, ocultarCarrito, mostrarMensajeError}
+function mostrarMensajeSinResultados(contenedor) {
+    contenedor.innerHTML = "";
+
+    contenedor.innerHTML = `
+        <div class="mensaje-sin-resultados">
+            <p class="mensaje-sin-resultados__titulo">
+                No se encontraron productos
+            </p>
+            <p class="mensaje-sin-resultados__texto">
+                Intenta seleccionar otra bodega o tipo de vino.
+            </p>
+        </div>
+    `;
+}
+export { renderizarCatalogo, renderizarCarrito, cargarSelectMetodoPago, cargarFiltroCatalogo, mostrarCarrito, ocultarCarrito, mostrarMensajeError, mostrarMensajeSinResultados}

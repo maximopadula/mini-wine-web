@@ -11,13 +11,13 @@ const $filtroTipoVino = document.getElementById("id-tipo-vino")
 const $filtroBodega= document.getElementById("id-bodega")
 
 //Carrito
-const dialogCarrito = document.querySelector(".carrito")
-const btnAbrirCarrito = document.querySelector(".btn-flotante-carrito")
-const btnCerrarCarrito = document.querySelector(".carrito__boton-cerrar")
-const contenedorProductos = document.querySelector(".carrito__productos")
-const spanCantidadTotal = document.querySelector(".carrito__titulo span")
-const spanPrecioTotal = document.querySelector(".carrito__total span")
-const contadorFlotante = document.querySelector(".carrito-contador")
+const $dialogCarrito = document.getElementById("carrito")
+const $btnAbrirCarrito = document.getElementById("carrito-flotante")
+const $btnCerrarCarrito = document.getElementById("boton-cerrar-carrito")
+const $contenedorProductos = document.getElementById("carrito-productos")
+const $spanCantidadTotal = document.getElementById("carrito-titulo-cantidad")
+const $spanPrecioTotal = document.getElementById("carrito-precio-total")
+const $contadorFlotante = document.getElementById("carrito-contador")
 const $selectMetodoPago = document.getElementById("metodo-pago")
 
 $filtroPresentacion.addEventListener("change", () => {
@@ -28,13 +28,13 @@ $filtroPresentacion.addEventListener("change", () => {
 $filtroTipoVino.addEventListener("change", filtrarProductos)
 $filtroBodega.addEventListener("change", filtrarProductos)
 
-btnAbrirCarrito.addEventListener("click", () => mostrarCarrito(dialogCarrito))
+$btnAbrirCarrito.addEventListener("click", () => mostrarCarrito($dialogCarrito))
 
-btnCerrarCarrito.addEventListener("click", () => ocultarCarrito(dialogCarrito))
+$btnCerrarCarrito.addEventListener("click", () => ocultarCarrito($dialogCarrito))
 
-dialogCarrito.addEventListener("click", (event) => {
-    if (event.target === dialogCarrito) {
-        ocultarCarrito(dialogCarrito)
+$dialogCarrito.addEventListener("click", (event) => {
+    if (event.target === $dialogCarrito) {
+        ocultarCarrito($dialogCarrito)
     }
 })
 
@@ -42,7 +42,7 @@ dialogCarrito.addEventListener("click", (event) => {
 function actualizarVistaCarrito() {
     const carrito = obtenerCarrito()
 
-    renderizarCarrito(carrito, contenedorProductos, spanCantidadTotal, spanPrecioTotal, contadorFlotante)
+    renderizarCarrito(carrito, $contenedorProductos, $spanCantidadTotal, $spanPrecioTotal, $contadorFlotante)
 
     agregarListenersBotonesCarrito()
 }

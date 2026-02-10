@@ -1,5 +1,5 @@
 import { obtenerDatos } from "../modelos/datos.js"
-import { renderizarCatalogo, renderizarCarrito, cargarSelectMetodoPago, cargarFiltroCatalogo, mostrarCarrito, ocultarCarrito } from "../vistas/renderizado.js"
+import { renderizarCatalogo, renderizarCarrito, cargarSelectMetodoPago, cargarFiltroCatalogo, mostrarCarrito, ocultarCarrito, mostrarMensajeVacio } from "../vistas/renderizado.js"
 import { agregarAlCarrito, eliminarDelCarrito, actualizarCantidad, obtenerCarrito } from "../modelos/carrito.js"
 
 const datos = await obtenerDatos("./datos/catalogo.json")
@@ -128,12 +128,15 @@ function filtrarProductos() {
     }
 
     if(bodegaElegida !== "todos"){
-        datosFiltrados = datosFiltrados.filter(producto=>producto.bodega== bodegaElegida)
+        datosFiltrados = datosFiltrados.filter(producto=>producto.bodega == bodegaElegida)
     }
 
-    renderizarCatalogo(datosFiltrados, $contenedor)
-
-    agregarListenersBotonesCatalogo()
+    if (datosFiltrados.length === 0) {
+        mostrarMensajeVacio($contenedor, "No se encontraron productos", "Prueba seleccionando otra bodega o tipo de vino.")
+    } else {
+        renderizarCatalogo(datosFiltrados, $contenedor)
+        agregarListenersBotonesCatalogo()
+    }
 }
 
 function controlSelect() {

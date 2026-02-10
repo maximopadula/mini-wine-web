@@ -32,6 +32,17 @@ function renderizarCarrito(carrito, contenedorProductos, spanCantidadTotal, span
 
     contenedorProductos.innerHTML = ""
 
+    if(carrito.length === 0){
+        mostrarMensajeVacio(contenedorProductos, "Tu carrito está vacío", "¡Agrega algún producto para llenarlo!")
+
+        spanCantidadTotal.textContent = "0"
+        spanPrecioTotal.textContent = "$0.00"
+        if(contadorFlotante) contadorFlotante.textContent = "0"
+
+        return
+    }
+
+
     let cantidadTotal = 0
     let precioTotal = 0
 
@@ -132,18 +143,18 @@ function mostrarMensajeError(contenedorErrores, errores) {
     }
 }
 
-function mostrarMensajeSinResultados(contenedor) {
-    contenedor.innerHTML = "";
+function mostrarMensajeVacio(contenedor, titulo, texto) {
+    contenedor.innerHTML = ""
 
     contenedor.innerHTML = `
         <div class="mensaje-sin-resultados">
             <p class="mensaje-sin-resultados__titulo">
-                No se encontraron productos
+                ${titulo}
             </p>
             <p class="mensaje-sin-resultados__texto">
-                Intenta seleccionar otra bodega o tipo de vino.
+                ${texto}
             </p>
         </div>
-    `;
+    `
 }
-export { renderizarCatalogo, renderizarCarrito, cargarSelectMetodoPago, cargarFiltroCatalogo, mostrarCarrito, ocultarCarrito, mostrarMensajeError, mostrarMensajeSinResultados}
+export { renderizarCatalogo, renderizarCarrito, cargarSelectMetodoPago, cargarFiltroCatalogo, mostrarCarrito, ocultarCarrito, mostrarMensajeError, mostrarMensajeVacio}

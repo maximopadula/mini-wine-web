@@ -1,5 +1,5 @@
 import { obtenerDatos } from "../modelos/datos.js"
-import { renderizarCatalogo, renderizarCarrito, cargarSelectMetodoPago, cargarFiltroCatalogo, mostrarCarrito, ocultarCarrito, mostrarMensajeSinResultados } from "../vistas/renderizado.js"
+import { renderizarCatalogo, renderizarCarrito, cargarSelectMetodoPago, cargarFiltroCatalogo, mostrarCarrito, ocultarCarrito, mostrarMensajeVacio } from "../vistas/renderizado.js"
 import { agregarAlCarrito, eliminarDelCarrito, actualizarCantidad, obtenerCarrito } from "../modelos/carrito.js"
 
 const datos = await obtenerDatos("./datos/catalogo.json")
@@ -132,7 +132,7 @@ function filtrarProductos() {
     }
 
     if (datosFiltrados.length === 0) {
-        mostrarMensajeSinResultados($contenedor)
+        mostrarMensajeVacio($contenedor, "No se encontraron productos", "Prueba seleccionando otra bodega o tipo de vino.")
     } else {
         renderizarCatalogo(datosFiltrados, $contenedor)
         agregarListenersBotonesCatalogo()

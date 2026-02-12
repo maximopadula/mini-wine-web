@@ -29,11 +29,10 @@ $formularioContacto.addEventListener("submit", (evento) => {
 
     const nombre = document.getElementById("id-nombre").value.trim()
     const email = document.getElementById("id-email").value.trim()
-    const telefono = document.getElementById("id-telefono").value.trim()
     const motivoContacto = document.getElementById("id-motivo").value.trim()
     const comentario = document.getElementById("id-comentario").value.trim()
 
-    const datos = {nombre, email, telefono, motivoContacto, comentario}
+    const datos = {nombre, email, motivoContacto, comentario}
 
     const errores = validarCamposFormularioContacto(datos)
 

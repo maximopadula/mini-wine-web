@@ -68,6 +68,7 @@ $formularioCarrito.addEventListener("submit", (event) => {
 
     const datos = { productos, entrega, metodoPago, nombreApellido, email, provincia, localidad, direccion, codigoPostal}
 
+    //si el valor de la variable entrega es literalmente envío, entonces esEnvío es true, si no false
     const esEnvio = entrega === 'envío'
     const errores = validarCamposFormularioCarrito(datos, esEnvio)
 

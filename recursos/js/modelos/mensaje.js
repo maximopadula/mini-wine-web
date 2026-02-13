@@ -36,7 +36,7 @@ function crearPlantillaMensajeCarrito(datos) {
         const subtotal = prod.precio * prod.cantidad
         total += subtotal
 
-        // TERNARIO: Si tiene bodega, la formatea. Si no, string vacío.
+    // TERNARIO: Si tiene bodega, la formatea. Si no, string vacío. Ej: pack de 4 vinos elegidos por MiniWine x1
     const infoBodega = prod.bodega ? ` (${prod.bodega})` : ""
 
         textoProductos += `• ${prod.nombre}${infoBodega} x${prod.cantidad} - $${subtotal}\n`

@@ -35,8 +35,11 @@ function crearPlantillaMensajeCarrito(datos) {
     productos.forEach(prod => {
         const subtotal = prod.precio * prod.cantidad
         total += subtotal
-        
-        textoProductos += `• ${prod.nombre} (${prod.bodega}) x${prod.cantidad} - $${subtotal}\n`
+
+        // TERNARIO: Si tiene bodega, la formatea. Si no, string vacío.
+    const infoBodega = prod.bodega ? ` (${prod.bodega})` : ""
+
+        textoProductos += `• ${prod.nombre}${infoBodega} x${prod.cantidad} - $${subtotal}\n`
     })
 
     let infoUbicacion = ""

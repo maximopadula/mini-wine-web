@@ -45,10 +45,7 @@ function crearPlantillaMensajeCarrito(datos) {
     let infoUbicacion = ""
 
     if(entrega.toLowerCase().includes("env")){
-        infoUbicacion = `*• Dirección:* ${direccion}, ${localidad}, ${provincia} (CP: ${codigoPostal})`    
-    }
-    else{
-        infoUbicacion = `*• Punto de Retiro:* Calandria 667 (Córdoba)`
+        infoUbicacion = `\n*• Dirección:* ${direccion}, ${localidad}, ${provincia} (CP: ${codigoPostal})`    
     }
 
     const mensajePedido = `¡Hola! Quiero realizar un pedido desde el *CATÁLOGO WEB*:
@@ -61,8 +58,7 @@ ${textoProductos}
 *•Nombre:* ${nombreApellido}
 *•Entrega:* ${entrega}
 *•Pago:* ${metodoPago}
-*•Email:* ${email}
-${infoUbicacion}`
+*•Email:* ${email}${infoUbicacion}`
 
     return mensajePedido
 }

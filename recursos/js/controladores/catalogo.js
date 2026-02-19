@@ -67,7 +67,7 @@ $formularioCarrito.addEventListener("submit", (event) => {
     const productos = obtenerCarrito()
     if(productos.length === 0) return
 
-    const entrega = document.querySelector(".carrito__boton-entrega:checked").value
+    const entrega = document.querySelector(".carrito__boton-entrega:checked").parentElement.textContent.trim()
     const metodoPago = document.getElementById("metodo-pago").value
     const nombreApellido = document.getElementById("nombre-apellido").value.trim()
     const email = document.getElementById("email").value.trim()

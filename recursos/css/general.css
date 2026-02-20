@@ -78,6 +78,34 @@ p, input, textarea, select, label, li {
     font-size: var(--parrafo);
 }
 
+.saltar-contenido {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    width: 1px; /* Es importante definir un tamaño mínimo */
+    height: 1px;
+    overflow: hidden;
+}
+
+.saltar-contenido:focus {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    /* Esto es lo que lo arregla: */
+    width: auto;
+    height: auto;
+    overflow: visible;
+    
+    /* Estilos para que parezca un botón */
+    z-index: 9999;
+    padding: 10px 15px;
+    background-color: #ffffff; /* Fondo blanco */
+    color: #000000; /* Texto negro */
+    border: 2px solid #000000; /* Borde negro para definirlo bien */
+    text-decoration: none;
+    font-weight: bold;
+}
+
 .boton {
     display: inline-block;
     font-size: var(--parrafo);

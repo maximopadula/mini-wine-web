@@ -168,7 +168,7 @@ header > a {
     -webkit-box-shadow: var(--sombra-header-footer);
     -moz-box-shadow: var(--sombra-header-footer);
 
-    z-index: 10;
+    z-index: 1000;
 }
 
 .cabecera__logotipo {

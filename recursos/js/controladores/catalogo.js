@@ -42,13 +42,20 @@ $filtroPresentacion.addEventListener("change", () => {
 $filtroTipoVino.addEventListener("change", aplicarFiltrado)
 $filtroBodega.addEventListener("change", aplicarFiltrado)
 
-$btnAbrirCarrito.addEventListener("click", () => mostrarCarrito($dialogCarrito))
+$btnAbrirCarrito.addEventListener("click", () => {
+    mostrarCarrito($dialogCarrito)
+    document.body.classList.add('no-scroll')
+})
 
-$btnCerrarCarrito.addEventListener("click", () => ocultarCarrito($dialogCarrito))
+$btnCerrarCarrito.addEventListener("click", () => {
+    ocultarCarrito($dialogCarrito)
+    document.body.classList.remove('no-scroll')
+})
 
 $dialogCarrito.addEventListener("click", (event) => {
     if (event.target === $dialogCarrito) {
         ocultarCarrito($dialogCarrito)
+        document.body.classList.remove('no-scroll')
     }
 })
 

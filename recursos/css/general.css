@@ -168,7 +168,7 @@ header > a {
     -webkit-box-shadow: var(--sombra-header-footer);
     -moz-box-shadow: var(--sombra-header-footer);
 
-    z-index: 10;
+    z-index: 1000;
 }
 
 .cabecera__logotipo {
@@ -311,6 +311,11 @@ header > a {
 .errores {
     text-align: center;   
     display: none; 
+}
+
+/* Clase utilitaria para bloquear el scroll de fondo */
+.no-scroll {
+    overflow: hidden;
 }
 
 /* Tablet */

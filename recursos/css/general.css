@@ -313,6 +313,11 @@ header > a {
     display: none; 
 }
 
+/* Clase utilitaria para bloquear el scroll de fondo */
+.no-scroll {
+    overflow: hidden;
+}
+
 /* Tablet */
 @media (min-width: 768px) {
     /* :root {

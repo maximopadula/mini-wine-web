@@ -242,9 +242,7 @@ header > a {
     border-bottom: 2px solid var(--bordo);
     color: var(--bordo);
 }
-.navegacion__item:hover a.activo {
-    border-bottom: none; /* Evita que aparezca la línea roja encima del punto */
-}
+
 
 .pie {
     display: flex;

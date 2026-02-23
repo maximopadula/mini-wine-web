@@ -182,6 +182,10 @@
     border: none;
 }
 
+.carrito::backdrop {
+    background-color: rgba(0, 0, 0, 0.436);
+}
+
 .carrito[open] {
     display: grid;
     grid-template-rows: auto 1fr auto;

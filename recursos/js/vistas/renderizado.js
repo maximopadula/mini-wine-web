@@ -9,8 +9,8 @@ function renderizarCatalogo(arreglo, $contenedor) {
 
                 <div class="tarjeta-producto__informacion">
                     <h2 class="tarjeta-producto__titulo">${element.nombre}</h2>
-                    <h3 class="tarjeta-producto__bodega">${element.bodega}</h3>
-                    <h4 class="tarjeta-producto__tipo-vino">${element.tipo}</h4>
+                    ${element.bodega ? `<h3 class="tarjeta-producto__bodega">${element.bodega}</h3>` : ""}
+                    ${element.tipo ? `<h4 class="tarjeta-producto__tipo-vino">${element.tipo}</h4>` : ""}
                     <p class="tarjeta-producto__precio"><strong>$${element.precio}</strong></p>
 
                     <button data-id="${element.id}" class="boton boton--agregar-al-carrito" aria-label="Agregar al carrito">

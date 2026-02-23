@@ -129,10 +129,10 @@
    ========================================================================== */
 .btn-flotante-carrito {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 65px;
-    height: 65px;
+    bottom: 2rem;
+    right: 2rem;
+    width: 8rem;
+    height: 8rem;
     border-radius: 50%;
     background-color: white;
     border: 2px solid var(--bordo);
@@ -141,7 +141,8 @@
     align-items: center;
     cursor: pointer;
     z-index: 900;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--sombra-header-footer);
+    -webkit-box-shadow: var(--sombra-header-footer);
     transition: transform 0.3s ease;
 }
 
@@ -150,20 +151,20 @@
 }
 
 .btn-flotante-icono {
-    width: 30px;
-    height: 30px;
+    width: 3rem;
+    height: 3rem;
 }
 
 .carrito-contador {
     position: absolute;
-    top: -5px;
-    right: -5px;
+    top: -0.5rem;
+    right: -0.5rem;
     background-color: var(--bordo);
     color: white;
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: bold;
-    width: 25px;
-    height: 25px;
+    width: 3rem;
+    height: 3rem;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -180,6 +181,10 @@
     max-width: 50rem;
     margin-left: auto;
     border: none;
+}
+
+.carrito::backdrop {
+    background-color: rgba(0, 0, 0, 0.436);
 }
 
 .carrito[open] {

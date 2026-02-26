@@ -4,7 +4,7 @@
 
 .contenedor {
     display: grid;
-    gap: var(--espaciado-medio);
+    gap: var(--espaciado-chico);
 }
 
 .seccion-historia__parrafo:last-child {

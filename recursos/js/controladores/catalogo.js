@@ -7,17 +7,17 @@ import { filtrarProductos } from "../modelos/filtros.js"
 import { renderizarCatalogo, renderizarCarrito, cargarSelectMetodoPago, cargarFiltroCatalogo, mostrarCarrito, ocultarCarrito, mostrarMensajeVacio, mostrarMensajeError, cambiarVisibilidadElementosCarrito, ocultarMensajeError } from "../vistas/renderizado.js"
 
 // 1. Traemos todo el archivo JSON completo (la caja grande)
-const jsonCatalogo = await obtenerDatos("./datos/catalogo.json");
+const jsonCatalogo = await obtenerDatos("./datos/base_datos/catalogo.json");
 
 // 2. Extraemos solo el array de productos (abrimos la caja chica)
 const datosCatalogo = jsonCatalogo.productos;
 
 // 3. Traemos los métodos de pago
-const jsonMetodosPago = await obtenerDatos("./datos/metodos-pago.json");
+const jsonMetodosPago = await obtenerDatos("./datos/base_datos/metodos-pago.json");
 const datosMetodosPago = jsonMetodosPago.metodos_pago; 
 
 // 4. Traemos los datos globales
-const datosGlobales = await obtenerDatos("./datos/globales.json");
+const datosGlobales = await obtenerDatos("./datos/contenido_web/globales.json");
 
 // Inyectamos el logo
 document.getElementById("img-logo-footer").src = datosGlobales.logo_footer;

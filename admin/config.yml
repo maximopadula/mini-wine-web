@@ -13,7 +13,7 @@ collections:
     files:
       - label: "Catálogo de Productos"
         name: "productos"
-        file: "datos/catalogo.json" 
+        file: "datos/base_datos/catalogo.json" 
         fields:
           - name: "productos" 
             label: "Lista de Productos"
@@ -37,7 +37,7 @@ collections:
     files:
       - label: "Textos Globales (Pie de página y Contacto)"
         name: "globales"
-        file: "datos/globales.json"
+        file: "datos/contenido_web/globales.json"
         fields:
           - {label: "Logo del Footer", name: "logo_footer", widget: "image"}
           - name: "enlaces_contacto"

@@ -229,5 +229,17 @@ function renderizarFooter(datosGlobales, $imgLogo, $contenedorRedes) {
         });
     }
 }
+function renderizarTextosCatalogo(textos) {
+    const $titulo = document.getElementById("titulo-pagina");
+    const $textoMinorista = document.getElementById("texto-minorista");
+    const $enlaceMayorista = document.getElementById("enlace-mayorista");
 
-export { renderizarCatalogo, renderizarCarrito, cargarSelectMetodoPago, cargarFiltroCatalogo, mostrarCarrito, ocultarCarrito, mostrarMensajeError, mostrarMensajeVacio, cambiarVisibilidadElementosCarrito, ocultarMensajeError, renderizarFooter}
+    if ($titulo) $titulo.textContent = textos.titulo_pagina;
+    if ($textoMinorista) $textoMinorista.textContent = textos.texto_minorista;
+    if ($enlaceMayorista) {
+        $enlaceMayorista.textContent = textos.texto_enlace_mayorista;
+        $enlaceMayorista.href = textos.enlace_mayorista;
+    }
+}
+
+export { renderizarCatalogo, renderizarCarrito, cargarSelectMetodoPago, cargarFiltroCatalogo, mostrarCarrito, ocultarCarrito, mostrarMensajeError, mostrarMensajeVacio, cambiarVisibilidadElementosCarrito, ocultarMensajeError, renderizarFooter,renderizarTextosCatalogo}

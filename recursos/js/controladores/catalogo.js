@@ -4,7 +4,7 @@ import {validarCamposFormularioCarrito } from "../modelos/validacion.js"
 import { crearLinkMensajeWhatsapp, crearPlantillaMensajeCarrito } from "../modelos/mensaje.js"
 import { filtrarProductos } from "../modelos/filtros.js"
 
-import { renderizarCatalogo, renderizarCarrito, cargarSelectMetodoPago, cargarFiltroCatalogo, mostrarCarrito, ocultarCarrito, mostrarMensajeVacio, mostrarMensajeError, cambiarVisibilidadElementosCarrito, ocultarMensajeError } from "../vistas/renderizado.js"
+import { renderizarCatalogo, renderizarCarrito, cargarSelectMetodoPago, cargarFiltroCatalogo, mostrarCarrito, ocultarCarrito, mostrarMensajeVacio, mostrarMensajeError, cambiarVisibilidadElementosCarrito, ocultarMensajeError, renderizarTextosCatalogo } from "../vistas/renderizado.js"
 
 import { numeroWhatsApp } from "./global.js";
 
@@ -22,6 +22,12 @@ const $contenedor = document.getElementById("seccion-productos")
 const $filtroPresentacion = document.getElementById("id-presentacion")
 const $filtroTipoVino = document.getElementById("id-tipo-vino") 
 const $filtroBodega = document.getElementById("id-bodega")
+
+
+// 4. Traemos e inyectamos los textos de la página
+const textosCatalogo = await obtenerDatos("./datos/contenido_web/textos_catalogo.json");
+renderizarTextosCatalogo(textosCatalogo);
+
 
 //Carrito
 const $dialogCarrito = document.getElementById("carrito")

@@ -48,3 +48,12 @@ collections:
               - {label: "Enlace / URL (Ej: https://wa.me/... o mailto:...)", name: "url", widget: "string"}
               - {label: "Texto a mostrar (Ej: @miniwine)", name: "texto", widget: "string"}
               - {label: "Ícono (PNG o SVG oscuro)", name: "icono", widget: "image"}
+              
+      - label: "Textos de la página: Catálogo"
+        name: "textos_catalogo"
+        file: "datos/contenido_web/textos_catalogo.json"
+        fields:
+          - {label: "Título Principal", name: "titulo_pagina", widget: "string"}
+          - {label: "Texto de aclaración (Precios minoristas)", name: "texto_minorista", widget: "string"}
+          - {label: "Texto del enlace (Mayoristas)", name: "texto_enlace_mayorista", widget: "string"}
+          - {label: "URL del enlace (Hacia dónde lleva)", name: "enlace_mayorista", widget: "string"}

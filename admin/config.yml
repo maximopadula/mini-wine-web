@@ -57,3 +57,60 @@ collections:
           - {label: "Texto de aclaración (Precios minoristas)", name: "texto_minorista", widget: "string"}
           - {label: "Texto del enlace (Mayoristas)", name: "texto_enlace_mayorista", widget: "string"}
           - {label: "URL del enlace (Hacia dónde lleva)", name: "enlace_mayorista", widget: "string"}
+
+      - label: "Textos de la página: Inicio"
+        name: "textos_inicio"
+        file: "datos/contenido_web/textos_inicio.json"
+        fields:
+          - name: "hero"
+            label: "1. Sección Principal (Hero)"
+            widget: "object"
+            fields:
+              - {label: "Imagen de fondo", name: "imagen", widget: "image"}
+              - {label: "Texto principal", name: "texto", widget: "string"}
+          - name: "seccion_nosotros"
+            label: "2. Sección Nosotros (Mini Wine)"
+            widget: "object"
+            fields:
+              - {label: "Título", name: "titulo", widget: "string"}
+              - {label: "Párrafo", name: "parrafo", widget: "text"}
+          - name: "seccion_productos"
+            label: "3. Sección Productos"
+            widget: "object"
+            fields:
+              - {label: "Título de la sección", name: "titulo", widget: "string"}
+              - name: "producto_1"
+                label: "Producto 1 (Individual)"
+                widget: "object"
+                fields:
+                  - {label: "Imagen", name: "imagen", widget: "image"}
+                  - {label: "Título", name: "titulo", widget: "string"}
+                  - {label: "Párrafo", name: "parrafo", widget: "text"}
+              - name: "producto_2"
+                label: "Producto 2 (Packs)"
+                widget: "object"
+                fields:
+                  - {label: "Imagen", name: "imagen", widget: "image"}
+                  - {label: "Título", name: "titulo", widget: "string"}
+                  - {label: "Párrafo", name: "parrafo", widget: "text"}
+          - name: "seccion_delivery"
+            label: "4. Sección Delivery"
+            widget: "object"
+            fields:
+              - {label: "Título", name: "titulo", widget: "string"}
+              - {label: "Texto previo a los barrios", name: "texto_barrios", widget: "string"}
+              - label: "Lista de Barrios"
+                name: "barrios"
+                widget: "list"
+                field: {label: "Nombre del Barrio", name: "barrio", widget: "string"}
+              - {label: "Aclaración otras zonas", name: "texto_otras_zonas", widget: "string"}
+              - {label: "Texto sobre el mapa", name: "texto_mapa", widget: "string"}
+              - {label: "URL del Mapa", name: "url_mapa", widget: "string"}
+          - name: "seccion_bodega"
+            label: "5. Sección Sumar Bodega"
+            widget: "object"
+            fields:
+              - {label: "Título", name: "titulo", widget: "string"}
+              - {label: "Párrafo", name: "parrafo", widget: "text"}
+              - {label: "Texto del botón", name: "texto_boton", widget: "string"}
+              - {label: "Enlace del botón", name: "url_boton", widget: "string"}

@@ -1,0 +1,39 @@
+{
+  "hero": {
+    "imagen": "./recursos/imagenes/hero-inicio.webp",
+    "texto": "Vinos cordobeses en pequeño formato. Grandes historias en cada copa."
+  },
+  "seccion_nosotros": {
+    "titulo": "Mini Wine",
+    "parrafo": "En Mini Wine seleccionamos vinos cordobeses de bodegas boutique y los presentamos en un formato de degustación que redefine la experiencia de beber vino. Nuestro propósito es acercar la vitivinicultura local a más personas, conectando el trabajo de cada bodega con quienes valoran la calidad, la historia y la autenticidad detrás de cada botella. Trabajamos de manera directa con productores de Córdoba para ofrecer varietales cuidados, expresivos y únicos, en un tamaño pensado para disfrutar, descubrir y compartir. Mini Wine es más que un producto: es cultura, identidad y experiencia en 187 ml."
+  },
+  "seccion_productos": {
+    "titulo": "Nuestros productos",
+    "producto_1": {
+      "imagen": "./recursos/imagenes/Individual.webp",
+      "titulo": "Individual",
+      "parrafo": "Cada botella individual de Mini Wine representa la identidad de una bodega cordobesa. Son vinos seleccionados uno por uno, en 187 ml, para que puedas probar, elegir y encontrar tus favoritos sin necesidad de abrir una botella entera. Varietales clásicos, expresiones artesanales y blends únicos, todos con su propio carácter y la dedicación de cada productor local."
+    },
+    "producto_2": {
+      "imagen": "./recursos/imagenes/packs.webp",
+      "titulo": "Packs",
+      "parrafo": "Una curaduría de vinos cordobeses en formato degustación, ideales para regalar, explorar nuevos varietales o disfrutar momentos especiales. Disponible en pack de 4 unidades para una experiencia completa y en pack de 2 unidades, perfecto para una degustación rápida. Una selección pensada para sorprender."
+    }
+  },
+  "seccion_delivery": {
+    "titulo": "Formas de entrega",
+    "texto_barrios": "Delivery gratis en los siguientes barrios de Córdoba:",
+    "barrios": [
+      "Chateau Carreras", "Todo Valle Escondido", "Villa Belgrano", "Cerro de las Rosas", "Urca", "Quebrada de las Rosas", "Don Bosco", "Bajo Palermo", "Los Robles", "San Ignacio"
+    ],
+    "texto_otras_zonas": "En otras zonas de Córdoba capital envío gratis a partir de $54.800",
+    "texto_mapa": "Entrega gratis retirando por PUNTO DE ENTREGA MINI WINE",
+    "url_mapa": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3406.0848561154467!2d-64.2596519254984!3d-31.384223674276512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94329ed860f9b437%3A0x4029eda61444094a!2sCalandria%20667%2C%20X5003%20C%C3%B3rdoba!5e0!3m2!1ses!2sar!4v1766868835049!5m2!1ses!2sar"
+  },
+  "seccion_bodega": {
+    "titulo": "Sumá tu bodega a Mini Wine",
+    "parrafo": "Llevamos tus vinos a nuevos clientes sin que te preocupes por la logística. Expandí tu mercado hoy mismo. Unite a nuestra selección exclusiva de etiquetas. Buscamos bodegas con historia y calidad para ofrecer a nuestra comunidad.",
+    "texto_boton": "Quiero sumar mi bodega",
+    "url_boton": "contacto.html?motivo=bodega"
+  }
+}

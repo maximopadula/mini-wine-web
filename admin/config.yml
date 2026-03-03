@@ -114,3 +114,50 @@ collections:
               - {label: "Párrafo", name: "parrafo", widget: "text"}
               - {label: "Texto del botón", name: "texto_boton", widget: "string"}
               - {label: "Enlace del botón", name: "url_boton", widget: "string"}
+      - label: "Textos de la página: Acerca de Mini Wine"
+        name: "textos_acerca_de"
+        file: "datos/contenido_web/textos_acerca_de.json"
+        fields:
+          - name: "hero"
+            label: "1. Sección Principal (Hero)"
+            widget: "object"
+            fields:
+              - {label: "Imagen de fondo", name: "imagen", widget: "image"}
+              - {label: "Texto principal", name: "texto", widget: "string"}
+              
+          - name: "seccion_historia"
+            label: "2. Sección Historia"
+            widget: "object"
+            fields:
+              - {label: "Título", name: "titulo", widget: "string"}
+              - name: "parrafos"
+                label: "Párrafos de la historia"
+                widget: "list"
+                field: {label: "Párrafo", name: "parrafo", widget: "text"}
+                
+          - name: "seccion_identidad"
+            label: "3. Sección Identidad (Misión, Visión, Valores)"
+            widget: "object"
+            fields:
+              - {label: "Título de la sección", name: "titulo", widget: "string"}
+              - name: "mision"
+                label: "Misión"
+                widget: "object"
+                fields:
+                  - {label: "Imagen", name: "imagen", widget: "image"}
+                  - {label: "Título", name: "titulo", widget: "string"}
+                  - {label: "Texto", name: "parrafo", widget: "text"}
+              - name: "vision"
+                label: "Visión"
+                widget: "object"
+                fields:
+                  - {label: "Imagen", name: "imagen", widget: "image"}
+                  - {label: "Título", name: "titulo", widget: "string"}
+                  - {label: "Texto", name: "parrafo", widget: "text"}
+              - name: "valores"
+                label: "Valores"
+                widget: "object"
+                fields:
+                  - {label: "Imagen", name: "imagen", widget: "image"}
+                  - {label: "Título", name: "titulo", widget: "string"}
+                  - {label: "Texto", name: "parrafo", widget: "text"}        

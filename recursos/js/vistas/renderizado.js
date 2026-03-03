@@ -291,5 +291,43 @@ function renderizarTextosInicio(textos) {
         $bodegaBoton.href = textos.seccion_bodega.url_boton;
     }
 }
+function renderizarTextosAcercaDe(textos) {
+    // Hero
+    const $heroImg = document.getElementById("hero-img-acerca");
+    const $heroTexto = document.getElementById("hero-texto-acerca");
+    if ($heroImg) $heroImg.src = textos.hero.imagen;
+    if ($heroTexto) $heroTexto.textContent = textos.hero.texto;
 
-export { renderizarCatalogo, renderizarCarrito, cargarSelectMetodoPago, cargarFiltroCatalogo, mostrarCarrito, ocultarCarrito, mostrarMensajeError, mostrarMensajeVacio, cambiarVisibilidadElementosCarrito, ocultarMensajeError, renderizarFooter,renderizarTextosCatalogo, renderizarTextosInicio }
+    // Historia
+    const $historiaTitulo = document.getElementById("historia-titulo");
+    if ($historiaTitulo) $historiaTitulo.textContent = textos.seccion_historia.titulo;
+    
+    // Lista dinámica de párrafos
+    const $historiaParrafos = document.getElementById("historia-parrafos");
+    if ($historiaParrafos) {
+        $historiaParrafos.innerHTML = ""; // Limpiamos
+        textos.seccion_historia.parrafos.forEach(parrafo => {
+            // Le inyectamos la clase original de tu CSS a cada <p>
+            $historiaParrafos.insertAdjacentHTML("beforeend", `<p class="seccion-historia__parrafo">${parrafo}</p>`);
+        });
+    }
+
+    // Identidad
+    const $identidadTitulo = document.getElementById("identidad-titulo");
+    if ($identidadTitulo) $identidadTitulo.textContent = textos.seccion_identidad.titulo;
+
+    // Misión, Visión, Valores
+    document.getElementById("mision-img").src = textos.seccion_identidad.mision.imagen;
+    document.getElementById("mision-titulo").textContent = textos.seccion_identidad.mision.titulo;
+    document.getElementById("mision-parrafo").textContent = textos.seccion_identidad.mision.parrafo;
+
+    document.getElementById("vision-img").src = textos.seccion_identidad.vision.imagen;
+    document.getElementById("vision-titulo").textContent = textos.seccion_identidad.vision.titulo;
+    document.getElementById("vision-parrafo").textContent = textos.seccion_identidad.vision.parrafo;
+
+    document.getElementById("valores-img").src = textos.seccion_identidad.valores.imagen;
+    document.getElementById("valores-titulo").textContent = textos.seccion_identidad.valores.titulo;
+    document.getElementById("valores-parrafo").textContent = textos.seccion_identidad.valores.parrafo;
+}
+
+export { renderizarCatalogo, renderizarCarrito, cargarSelectMetodoPago, cargarFiltroCatalogo, mostrarCarrito, ocultarCarrito, mostrarMensajeError, mostrarMensajeVacio, cambiarVisibilidadElementosCarrito, ocultarMensajeError, renderizarFooter,renderizarTextosCatalogo, renderizarTextosInicio, renderizarTextosAcercaDe }

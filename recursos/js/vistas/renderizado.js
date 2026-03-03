@@ -229,6 +229,7 @@ function renderizarFooter(datosGlobales, $imgLogo, $contenedorRedes) {
         });
     }
 }
+
 function renderizarTextosCatalogo(textos) {
     const $titulo = document.getElementById("titulo-pagina");
     const $textoMinorista = document.getElementById("texto-minorista");
@@ -241,6 +242,7 @@ function renderizarTextosCatalogo(textos) {
         $enlaceMayorista.href = textos.enlace_mayorista;
     }
 }
+
 function renderizarTextosInicio(textos) {
     // Hero
     const $heroImg = document.getElementById("hero-img");
@@ -291,6 +293,7 @@ function renderizarTextosInicio(textos) {
         $bodegaBoton.href = textos.seccion_bodega.url_boton;
     }
 }
+
 function renderizarTextosAcercaDe(textos) {
     // Hero
     const $heroImg = document.getElementById("hero-img-acerca");
@@ -330,4 +333,11 @@ function renderizarTextosAcercaDe(textos) {
     document.getElementById("valores-parrafo").textContent = textos.seccion_identidad.valores.parrafo;
 }
 
-export { renderizarCatalogo, renderizarCarrito, cargarSelectMetodoPago, cargarFiltroCatalogo, mostrarCarrito, ocultarCarrito, mostrarMensajeError, mostrarMensajeVacio, cambiarVisibilidadElementosCarrito, ocultarMensajeError, renderizarFooter,renderizarTextosCatalogo, renderizarTextosInicio, renderizarTextosAcercaDe }
+function renderizarTextosContacto(textos) {
+    const $titulo = document.getElementById("contacto-titulo");
+    const $parrafo = document.getElementById("contacto-parrafo");
+
+    if ($titulo) $titulo.textContent = textos.titulo_pagina;
+    if ($parrafo) $parrafo.textContent = textos.parrafo_principal;
+}
+export { renderizarCatalogo, renderizarCarrito, cargarSelectMetodoPago, cargarFiltroCatalogo, mostrarCarrito, ocultarCarrito, mostrarMensajeError, mostrarMensajeVacio, cambiarVisibilidadElementosCarrito, ocultarMensajeError, renderizarFooter,renderizarTextosCatalogo, renderizarTextosInicio, renderizarTextosAcercaDe, renderizarTextosContacto }

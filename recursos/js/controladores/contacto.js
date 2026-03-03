@@ -2,6 +2,14 @@ import { mostrarMensajeError } from "../vistas/renderizado.js"
 import { validarCamposFormularioContacto } from "../modelos/validacion.js"
 import { crearPlantillaMensajeContacto, crearLinkMensajeWhatsapp } from "../modelos/mensaje.js"
 
+import { obtenerDatos } from "../modelos/datos.js";
+import { renderizarTextosContacto } from "../vistas/renderizado.js";
+
+
+// 1. Cargamos los textos desde el JSON y los mandamos a la vista
+const textosContacto = await obtenerDatos("./datos/contenido_web/textos_contacto.json");
+renderizarTextosContacto(textosContacto);
+
 const $contenedorErrores = document.getElementById("errores")
 const $formularioContacto = document.getElementById("formulario-contacto")
 const numeroWhatsApp = "5493518519953" 

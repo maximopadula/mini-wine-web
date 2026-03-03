@@ -161,3 +161,9 @@ collections:
                   - {label: "Imagen", name: "imagen", widget: "image"}
                   - {label: "Título", name: "titulo", widget: "string"}
                   - {label: "Texto", name: "parrafo", widget: "text"}        
+      - label: "Textos de la página: Contacto"
+        name: "textos_contacto"
+        file: "datos/contenido_web/textos_contacto.json"
+        fields:
+          - {label: "Título de la página", name: "titulo_pagina", widget: "string"}
+          - {label: "Párrafo descriptivo", name: "parrafo_principal", widget: "text"}
